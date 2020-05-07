@@ -1,17 +1,13 @@
 .card{
     display: inline-block;
-    width:250px !important;
-    height: 410px;
+    width:200px !important;
     border-radius: 10px;
     border:1px solid  rgba(0,0,0,0.2);
     overflow: hidden;
     margin: 0px 15px;
     text-align: center;
-}
-@media (max-width:800px){
-   .card{
-    height: 410px;
-   }
+    padding-bottom: 1rem;
+    white-space: normal;
 }
 .card .image{
     width: 100%;

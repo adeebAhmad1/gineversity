@@ -1,3 +1,6 @@
+.container-fluid{
+    position: relative;
+}
 .form-setting{
     min-height: 90vh;
     display: flex;
@@ -6,13 +9,11 @@
     justify-content: flex-end;
     background-color: #f1f2f6;
 }
-
 .login-card{
     background-color: white;
     min-height: 50vh;
-    padding: 35px 55px 35px 55px !important;
+    padding: 35px!important;
 }
-
 .link-blue{
     cursor: pointer;
     color: #3742fa;

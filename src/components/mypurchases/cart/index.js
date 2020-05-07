@@ -25,12 +25,16 @@ export default class extends React.Component {
                     <div className={Styles.coPrice}>{"$80"}</div>
                 </div>
                 <br></br>
-                <a href="#popup" className={Styles.btnCheckOut}>CheckOut</a>
+                <a href="#popup" style={{color: "#fff", textDecoration: "none"}} className={Styles.btnCheckOut}>CheckOut</a>
             </div>
                 <div className={Styles.history}>
                 <div className={Styles.header}>
                     <div className={Styles.title}>Your Purchase History</div>
                     <div className={Styles.mdisc}>You have {2} items in your History</div>
+                <div className={Styles.swtichButtons}>
+                <button className={Styles.button} style={{marginRight: ".5rem"}}>My Courses</button>
+                <button className={Styles.button1}>My Books</button>
+                </div>
                 </div>
                 <Purchase id={1} title="abc" description="describe me well" price="$40" image="https://www.freecodecamp.org/news/content/images/2020/03/gpython.jpg"></Purchase>
                 <Purchase id={1} title="abc" description="describe me well" price="$40" image="https://www.freecodecamp.org/news/content/images/2020/03/gpython.jpg"></Purchase>

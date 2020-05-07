@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RegisterUser } from '../../redux/actions/userActions';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 const heading = { fontSize: '28px', fontWeight: '500', color: '#2f3542', textAlign: 'center', fontFamily: `''Montserrat', sans-serif`, width: '100%' };
 const inputStyle = { padding: '24px 24px 24px 24px', outline: 'none !important', fontFamily: `''Montserrat', sans-serif`, boxShadow: 'none !important', fontSize: '16px', marginTop: '12px' };
 const btnStyle = { borderRadius: '20px', marginTop: '16px' };
@@ -31,7 +31,7 @@ class index extends Component {
         const { name, email, password } = this.state;
         const { err, isError, isLoading } = this.props;
         return (
-            <form className="col-lg-5 col-11" onSubmit={(e) => this.handleSubmit(e)}>
+            <form className="col-lg-5 col-md-7 col-sm-9 col-11" onSubmit={(e) => this.handleSubmit(e)}>
                 <h3 style={heading}>Get started absolutely free</h3>
                 <div className="input-group mb-3" style={{ marginTop: '12px' }}>
                     <input type="text" className="form-control" style={inputStyle} name='name' value={name}
@@ -54,6 +54,8 @@ class index extends Component {
                         <span className="sr-only">Loading...</span>
                     </div>}
                 </button>
+                <p style={{ width: '100%', textAlign: 'center', marginTop: '16px', color: 'grey', fontSize: '12px !important' }}>Do You have an account?
+                 <Link className="link-blue" to='/login'>  Sign In</Link></p>
                 <div className="col-12 p-0 d-flex flex-row align-items-center" style={{ marginTop: '24px' }}>
                     <div className="col-5 p-0" style={{ borderTop: '1px solid #ced6e0' }}></div>
                     <h6 className="col-2 p-0" style={{ textAlign: 'center', fontWeight: '600', color: '#747d8c' }}>OR</h6>
@@ -63,6 +65,7 @@ class index extends Component {
                     <span className="fa fa-google" style={gStyle}></span>
                     Sign up with google
                 </button>
+           
             </form>
         )
     }

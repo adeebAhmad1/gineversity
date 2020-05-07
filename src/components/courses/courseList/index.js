@@ -36,9 +36,7 @@ export default class index extends Component {
                         Loreum ipsum is simply
                                 </h6>
                     <div className="m-2 d-flex flex-row justify-content-between align-items-center p-2">
-                        <button className="btn btn-danger">
-                            Buy Now
-                                    </button>
+                        <button className="btn btn-danger">Buy Now</button>
                         <h6 className="tag mt-2">$45.99</h6>
                 </div>
             </div>
@@ -66,15 +64,14 @@ export default class index extends Component {
 
     render() {
         const { list } = this.props;
-        const leftDom = (this.state.slide < 0) ? <div className={Styles.leftWrapper} style={{ position: "absolute", top: "50%",zIndex:100 }}>
-            <button className={Styles.btnNav} style={{zIndex:100}} onClick={this.handleLeft}><i className="fa fa-chevron-left" style={{ margin: "15px 18px 15px 12px" }}></i></button>
-        </div> : ""
-        console.log(leftDom);
+        const leftDom = (this.state.slide < 0) ? <div className={Styles.leftWrapper} style={{ position: "absolute", top: "50%",zIndex:100,left:0 }}>
+            <button className={Styles.btnNav} style={{zIndex:100}} onClick={this.handleLeft}><i className="fa fa-chevron-left" style={{ margin: "5px" }}></i></button>
+        </div> : "";
         return (
             <div className={'col-12 ' + Styles.listWrapper}>
-                <div className="col-11"  style={{ marginBottom: "2rem", display: "block", overflow: "hidden", marginLeft: 'auto', marginRight: 'auto',zIndex: 100  }}>
-                    <h4 className="col-lg-7 col-12" style={{ fontWeight: '700', fontSize: '21px', marginTop: '50px' }}>
-                        Choose from 100,000 video courses with new additions pusblished every month</h4>
+                <div className="col-12"  style={{overflow: "hidden" }}>
+                    <h2 className="col-lg-12 col-12 heading-primary" style={{ fontWeight: '700', marginTop: '50px' }}>
+                        Choose from 100,000 video courses with new additions pusblished every month</h2>
                     {leftDom}
                     {/* <div  className={Styles.list}  style={{ borderBottom: '1px solid #dcdde1', whiteSpace: "nowrap", marginLeft: this.state.slide  }}>
                         {this.renderList(list)}
@@ -82,8 +79,8 @@ export default class index extends Component {
                     <div className={Styles.list} style={{ whiteSpace: "nowrap", marginLeft: this.state.slide }}>
                         {this.renderCourses()}
                     </div>
-                    <div className={Styles.rightWrapper} style={{ position: "absolute", top: "50%", width: "50px", background: "transparent" }}>
-                        <button className={Styles.btnNav + " " + Styles.rightbtn} ><i className="fa fa-chevron-right" onClick={this.handleRight} style={{ margin: "15px 12px 15px 18px",zIndex: 100  }}></i></button>
+                    <div className={Styles.rightWrapper} style={{ position: "absolute", top: "50%", width: "50px", background: "transparent",right:0 }}>
+                        <button className={Styles.btnNav + " " + Styles.rightbtn} ><i className="fa fa-chevron-right" onClick={this.handleRight} style={{ margin: "5px",zIndex: 100  }}></i></button>
                     </div>
                 </div>
             </div>

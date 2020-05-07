@@ -32,59 +32,82 @@ class index extends Component {
     renderCommunityLinks(TopicList) {
         if (TopicList && TopicList.length > 0)
             return TopicList.map(i => {
-                return <Link to='/' key={i._id} style={{paddingLeft: ".5rem", textDecoration: 'none', color: 'black' }} className="left-side-item d-flex flex-row align-items-center pt-3">
-                    <img src={i.image} alt="topic" className={"mr-2"} style={{width: '30px', height: '30px', borderRadius: '1000px' }} />
-                    <h6 style={{alignSelf:"center", fontWeight: '400', color: 'grey', fontSize: '14px' }}>{i.name}</h6>
-                </Link>
+                return <li key={i._id} className="side-item side-item-hotel">
+                    <Link to="/" href="dangerouslySetInnerHTML" className="side-link">
+                        <img className="side-img" src={i.image} alt="topic" />
+                        <span className="side-text">{i.name}</span>
+                    </Link>
+                </li>
             })
     }
 
     renderCoursesLinks(TopicList) {
         if (TopicList && TopicList.length > 0)
             return TopicList.slice(0, 2).map(i => {
-                return <Link key={i._id} style={{ textDecoration: 'none', width: 'fit-content', color: 'black' }} className="d-flex flex-row align-items-center pt-2 pb-2" to=''>
-                    <img src={i.image} alt="topic" style={{ width: '30px', height: '30px', borderRadius: '1000px', marginRight: '16px' }} />
-                    <h6 style={{ fontWeight: '400', color: 'grey', fontSize: '14px'}}>Dummy Course</h6>
-                </Link>
-            })
+                return <li key={i._id} className="right-side-item">
+                    <Link to="" className="right-side-link">
+                        <img src={i.image} alt="topic" style={{ width: '30px', height: '30px', borderRadius: '1000px', marginRight: '16px' }} />
+                        <span className="right-side-text">Dummy Course</span>
+                    </Link>
+                </li>
+       })
     }
 
     render() {
         const { auth, profile, Feed, TopicList } = this.props;
-        return <div className="col-12 d-flex flex-lg-row flex-column align-items-start" style={{ marginTop: '30px'}}>
-            <div className="col-lg-2 col-12 md-4 p-0 left-side">
-                <h6 style={{ width: '100%', backgroundColor: '#dfe6e9', textAlign: 'center', fontWeight: 'bold', color: '#e74c3c', marginBottom: '0px' }} className="p-2"><span className="fa fa-feed mr-2"></span> Communities</h6>
-                <div className="col-12 d-flex flex-column" style={{ backgroundColor: '#ecf0f1' }} >
+        return<div className="content">
+
+            <nav className="sidebar ">
+                <h6 onClick={()=>window.innerWidth < 1000 ? this.refs.dropdown.classList.toggle("display_on_short") : ""} style={{ width: '100%', backgroundColor: '#f4f2f2', textAlign: 'center', fontWeight: 'bold', color: '#e74c3c', marginBottom: '0px',padding: `20` }} className="p-2"><span className="fa fa-feed mr-2"></span> Communities</h6>
+                <div className={`hide_on_click ${window.innerWidth < 1000 ? "display_on_short" : ""}`} ref="dropdown">
+                <ul className="side-nav">
                     {this.renderCommunityLinks(TopicList)}
-                    <hr style={{ width: '100%', marginBottom: '8px' }} />
-                    <h6 className={'left-side-footer-heading'} style={{ fontWeight: 'bold', marginLeft: '6px', fontSize: '12px', color: 'grey' }}>Follow us on</h6>
-                    <ul style={{ color: 'grey', fontSize: '10px', fontWeight: '500' }} className="left-side-list col-12 ">
-                        <li style={{ cursor: 'pointer' }}>Instagram</li>
-                        <li style={{ cursor: 'pointer' }}>Twitter</li>
-                        <li style={{ cursor: 'pointer' }}>Facebook</li>
+                </ul>
+                <div className="side-more-images">
+                    <img src="./img/user-4.jpg" className="side-more-img" alt="" />
+                    <img src="./img/user-4.jpg" className="side-more-img" alt="" />
+                    <img src="./img/user-4.jpg" className="side-more-img" alt="" />
+                    <p className="side-more-text">See More +</p>
+                </div>
+                <hr className="side-nav-hr" />
+                <div className="side-social">
+                    <p className="side-list-heading">Follow us on</p>
+                    <ul className="side-social-list">
+                        <li className="side-social-item"><a className="side-social-link" href="#">Instagram</a></li>
+                        <li className="side-social-item"><a className="side-social-link" href="#"> Twitter</a></li>
+                        <li className="side-social-item"><a className="side-social-link" href="#">Facebook</a></li>
                     </ul>
-                    <h6 className={'left-side-footer-heading'} style={{ fontWeight: 'bold', marginLeft: '6px', fontSize: '12px', color: 'grey' }}>Download our app</h6>
-                    <ul style={{ color: 'grey', fontSize: '10px', fontWeight: '500' }} className="left-side-list col-12 ">
-                        <li style={{ cursor: 'pointer' }}>Google Play Store</li>
-                        <li style={{ cursor: 'pointer' }}>App Store</li>
+                    <p className="side-list-heading">Download our App</p>
+                    <ul className="side-social-list">
+                        <li className="side-social-item"><a className="side-social-link" href="#"> App Store</a></li>
+                        <li className="side-social-item"><a className="side-social-link" href="#"> Google Play Store</a></li>
                     </ul>
                 </div>
-            </div>
-            <div className="col-lg-7 col-12 ">
-                <div className="col-12 d-flex flex-column align-items-center ">
-                    {auth && profile && <Suspense fallback={<Fragment />}><AddPost profile={profile} list={TopicList} submit={this.submit} /></Suspense>}
-                    <Suspense fallback={<Fragment />}>
-                        <List list={Feed} />
-                    </Suspense>
                 </div>
-            </div>
-            <div className="col-lg-3 col-12 right-side">
-                <h6 style={{padding: '.5rem', width: '100%', backgroundColor: '#dfe6e9', textAlign: 'center', fontWeight: 'bold', color: '#e74c3c', marginBottom: '0px' }}>Recommended Courses</h6>
-                <div className="col-12" style={{ backgroundColor: '#ecf0f1' }} >
-                    {this.renderCoursesLinks(TopicList)}
+                {window.innerWidth < 1000 ? <div style={{width: `100%`}}>
+                <div className="right-side-border">
+                <h2 className="right-side-heading-h"  onClick={()=>window.innerWidth < 1000 ? this.refs.courses.classList.toggle("display_on_short") : ""}>Recommended Courses</h2>
+                    <ul ref="courses" className={`right-side-list ${window.innerWidth < 1000 ? "display_on_short" : ""}`}>
+                        {this.renderCoursesLinks(TopicList)}
+                    </ul>
                 </div>
+            </div> : ""}
+            </nav>
+            <div className="center1">
+                {auth && profile && <Suspense fallback={<Fragment />}><AddPost profile={profile} list={TopicList} submit={this.submit} /></Suspense>}
+                <Suspense fallback={<Fragment />}>
+                    <List list={Feed} />
+                </Suspense>
             </div>
-        </div>
+            {window.innerWidth > 1000 ? <div className="right-side">
+                <div className="right-side-border">
+                <h2 className="right-side-heading-h">Recommended Courses</h2>
+                    <ul className="right-side-list">
+                        {this.renderCoursesLinks(TopicList)}
+                    </ul>
+                </div>
+            </div> : ""}
+            </div>
     }
 }
 

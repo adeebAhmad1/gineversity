@@ -25,9 +25,9 @@ export default class index extends Component {
                                 placeholder="Card Holder" required />
                         </div>
                         <div className={"credit-info"}>
-                          
+
                         <div class="dropdown">
-                        <input type="month" placeholder="Choose date and time" className="inputStyle form-control btn" style={{color:"white"}} name='date'/>
+                        <input type="month" placeholder="Choose date and time" className="inputStyle form-control btn-outline-danger"  name='date'/>
                         </div>
                         <div className="input-group cvc">
                             <input type="number" className="form-control inputStyle" name='password'
@@ -35,10 +35,10 @@ export default class index extends Component {
                         </div>
                         </div>
                         <div className={"buttons"}>
-                        <a href="#tours" className="btn btn-danger btn-signin" style={btnStyle}>
+                        <a href="#tours" className="btn btn-outline-danger pt-3 pb-3 mr-2" style={btnStyle}>
                             Cencel
                         </a>
-                        <button className="btn btn-block btn-signin" type='submit' style={btnStyle}>
+                        <button className="btn btn-outline-danger pt-3 pb-3" type='submit' style={btnStyle}>
                             CheckOut
                         </button>
                         </div>

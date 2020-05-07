@@ -31,7 +31,7 @@ class index extends Component {
         const { email, password } = this.state;
         const { isError, err, isLoading } = this.props;
         return (
-            <form className="col-lg-7 col-12 shadow-lg login-card " onSubmit={(e) => this.handleSubmit(e)}>
+            <form className=" shadow-lg login-card " onSubmit={(e) => this.handleSubmit(e)}>
                 <h3 style={heading}>Sign in &#38; Start Exploring!</h3>
                 <button className="btn btn-block p-2 btn-google d-flex align-items-center justify-content-center"
                     style={btnStyle}>

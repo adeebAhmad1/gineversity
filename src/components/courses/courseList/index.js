@@ -43,11 +43,12 @@ export default class index extends Component {
         })
     }
     handleRight = () => {
-        var move = window.innerWidth - this.CARD_LENGTH - 140;
+        var move = window.innerWidth - this.CARD_LENGTH - this.CARD_SPACING*dummy.length;
         move = (move < this.CARD_LENGTH) ? this.CARD_LENGTH + this.CARD_SPACING : move;
         move = (move < 0) ? 0 : move;
         var maxMove = (dummy.length * this.CARD_LENGTH) / move;
-        if (-1 * parseInt(this.state.slide / move) < parseInt(maxMove))
+        console.log((-1 * parseInt(this.state.slide / move))+200,maxMove)
+        if ((-1 * parseInt(this.state.slide / move)) < parseInt(maxMove))
             this.setState({ slide: this.state.slide - move })
     }
     handleLeft = () => {
@@ -64,14 +65,15 @@ export default class index extends Component {
 
     render() {
         const { list } = this.props;
-        const leftDom = (this.state.slide < 0) ? <div className={Styles.leftWrapper} style={{ position: "absolute", top: "50%",zIndex:100,left:0 }}>
+        const leftDom = (this.state.slide < 0) ? <div className={Styles.leftWrapper} style={{ position: "absolute", top: "50%",left:0,zIndex: 100 }}>
             <button className={Styles.btnNav} style={{zIndex:100}} onClick={this.handleLeft}><i className="fa fa-chevron-left" style={{ margin: "5px" }}></i></button>
         </div> : "";
         return (
             <div className={'col-12 ' + Styles.listWrapper}>
                 <div className="col-12"  style={{overflow: "hidden" }}>
                     <h2 className="col-lg-12 col-12 heading-primary" style={{ fontWeight: '700', marginTop: '50px' }}>
-                        Choose from 100,000 video courses with new additions pusblished every month</h2>
+                        {this.props.title} </h2>
+                    <div style={{position: `relative`}}>
                     {leftDom}
                     {/* <div  className={Styles.list}  style={{ borderBottom: '1px solid #dcdde1', whiteSpace: "nowrap", marginLeft: this.state.slide  }}>
                         {this.renderList(list)}
@@ -80,7 +82,8 @@ export default class index extends Component {
                         {this.renderCourses()}
                     </div>
                     <div className={Styles.rightWrapper} style={{ position: "absolute", top: "50%", width: "50px", background: "transparent",right:0 }}>
-                        <button className={Styles.btnNav + " " + Styles.rightbtn} ><i className="fa fa-chevron-right" onClick={this.handleRight} style={{ margin: "5px",zIndex: 100  }}></i></button>
+                        <button className={Styles.btnNav + " " + Styles.rightbtn}  onClick={this.handleRight}  ><i className="fa fa-chevron-right" style={{ margin: "5px",zIndex: 100  }}></i></button>
+                    </div>
                     </div>
                 </div>
             </div>

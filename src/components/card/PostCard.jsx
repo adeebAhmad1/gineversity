@@ -2,7 +2,7 @@ import React from "react";
 
 const PostCard = (item) => {
   return (
-    <div key={item._id} className="post col-12">
+    <div key={item._id} className="post col-md-12">
       <div className="post-head">
         <div
           style={{

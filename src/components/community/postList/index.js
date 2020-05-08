@@ -7,8 +7,6 @@ class index extends Component {
         if (list && list.length > 0) {
             return list.map(item => {
                 return <PostCard {...item} />
-
-
             });
         } else return <Fragment />
     }

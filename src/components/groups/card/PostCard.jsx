@@ -43,11 +43,7 @@ const PostCard = (item) => {
         )}
       </div>
       <div className="post-footer">
-        <h6 className="post-icons">
-          {" "}
-          <span className="fa fa-check-square-o post-icon"></span>
-          <span className="post-icon-text">Approve</span>
-        </h6>
+        
         <h6 className="post-icons">
           {" "}
           <span className="fa fa-comments post-icon"></span>
@@ -57,6 +53,11 @@ const PostCard = (item) => {
           {" "}
           <span className="fa fa-share-square post-icon"></span>
           <span className="post-icon-text">Share</span>
+        </h6>
+        <h6 className="post-icons">
+          {" "}
+          <span className="fa fa-thumbs-o-down post-icon"></span>
+          <span className="post-icon-text">Report</span>
         </h6>
       </div>
     </div>

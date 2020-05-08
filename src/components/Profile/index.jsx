@@ -19,10 +19,10 @@ class Profile extends Component {
         })
     }
   render () {
-    const condition = true;
+    const condition = this.props.ismyProfile;
     const obj = {
       postedBy: {
-        name: "Adeeb",
+        name: "Texting",
       },
       feed: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur molestiae qui eveniet consequatur repellendus perspiciatis praesentium reiciendis soluta sit doloremque impedit nesciunt nemo libero voluptas quam, magni rem dolores eum?",
       id: Math.random()

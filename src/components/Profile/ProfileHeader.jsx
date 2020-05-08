@@ -21,7 +21,7 @@ class ProfileHeader extends Component {
               {this.props.condition ? <div className=""><input type="file" name="aa" id="profile" style={{display: `none`}} />
               <label htmlFor="profile" className="btn btn-danger"><i className="fa fa-camera"></i></label></div> : ""}
             </div>
-            <h3>ADEEB AHMAD</h3>
+            <h3>Testing </h3>
           </div>
         </div>
         <div className="container-fluid">

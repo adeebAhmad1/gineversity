@@ -21,7 +21,8 @@ export function Routes() {
         <Route path='/register' component={SignupPage} />
         <Route path='/user/:id/topics' component={TopicPage} />
         <Route path='/courses' component={CoursePage}/>
-        <Route path='/profile' component={Profile}/>
+        <Route path='/profile' component={()=><Profile ismyProfile={true} />}/>
+        <Route path='/otherprofile' component={()=><Profile ismyProfile={false} />}/>
         <Route path='/ebooks' component={EBookPage}/>
         <Route path='/ebookdetails' component={ebookdetailsPage}/>
         <Route path='/mypurchases' component={MyPurchasesPage}/>

@@ -90,6 +90,8 @@ class index extends Component {
                         style={{ width: '30px', height: '30px', marginRight: '8px', borderRadius: '1000px' }} />
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                        <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
+                        <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
                         <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
                     </div>
             {isActive && <div className="m-2"></div>}
@@ -118,7 +120,9 @@ class index extends Component {
                     <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style={{ width: '30px', height: '30px', marginRight: '8px', borderRadius: '1000px' }} />
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                    <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                        <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
+                        <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
                         <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
                     </div>
                     {isActive && <div className="m-2"></div>}
@@ -147,7 +151,9 @@ class index extends Component {
                             <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle dropleft" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 style={{ width: '40px', height: '40px', marginRight: '8px', borderRadius: '1000px' }} />
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                            <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                            <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
+                            <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
                                 <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
                             </div>
                         </div>}

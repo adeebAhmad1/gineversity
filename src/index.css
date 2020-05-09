@@ -53,6 +53,7 @@ button{
   position: absolute;
   top: 100%;
   left: 70px;
+  text-align: center;
   transform: translateY(-25%);
 }
 .profile_image label{
@@ -93,6 +94,7 @@ button{
 
 .items_list{
   list-style: none;
+  padding-inline-start: 0px
 }
 .phone_no_icon{
   color: #fb26e4;
@@ -199,4 +201,10 @@ button{
 .job_icon{
   background-color: #fa9c9c;
   color: #f41a1a;
+}
+@media only screen and (max-width: 1000px){
+  .profile_image_wrapper{
+    left: 50%;
+    transform: translate(-50%,-25%);
+  }
 }

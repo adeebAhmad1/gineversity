@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ProfileHeader from './ProfileHeader'
 import Navbar from '../../components/nav';
 import Footer from '../../components/footer';
@@ -44,13 +44,28 @@ class Profile extends Component {
         <ProfileHeader condition={condition} index={0} />
         <div className="container-fluid" style={{zIndex: -1}}>
         <div className="row" style={{zIndex: -1}}>
-          {condition ? <PersonalInfo /> : <div className="col-lg-3" style={{marginTop: `150px`}}><div className="info_wrapper"><Link to="/" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link></div></div>}
+          {condition ? <PersonalInfo /> : <div className="col-lg-3 col-md-6" style={{marginTop: `150px`}}><div className="info_wrapper"><Link to="/" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link></div></div>}
+          {window.innerWidth < 1000 ? <Fragment>
+            {condition ? <PrivateInfo /> :
+          <div className="col-lg-3 col-md-6">
+            <div className="right-side" style={{width: `100%`}}>
+              <div className="right-side-border" style={{width: `100%`}}>
+                <h2 className="right-side-heading-h">Recommended Courses</h2>
+                <ul className="right-side-list">
+                  {this.renderCoursesLinks(TopicList)}
+                </ul>
+              </div>
+            </div>
+          </div>}
+          </Fragment> : ""}
           <div className="col-lg-6 col-md-12">
             <PostCard {...obj}/>
             <PostCard {...obj}/>
             <PostCard {...obj}/>
           </div>
-          {condition ? <PrivateInfo /> :
+          {
+            window.innerWidth > 1000 ? <Fragment>
+              {condition ? <PrivateInfo /> :
           <div className="col-lg-3">
             <div className="right-side" style={{width: `100%`}}>
               <div className="right-side-border" style={{width: `100%`}}>
@@ -61,6 +76,8 @@ class Profile extends Component {
               </div>
             </div>
           </div>}
+            </Fragment> : ""
+          }
         </div>
         </div>
         <Footer />

@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const PostCard = (item) => {
+  console.log(item)
   return (
     <div className="f-card">
         <div className="header">
           <div className="options">
-            <i className="fa fa-chevron-down"></i>
+            <i class="fa fa-ellipsis-v" aria-hidden="true" style={{fontSize: `1.1rem`}}></i>
           </div>
           <img
             className="co-logo"
@@ -20,14 +21,14 @@ const PostCard = (item) => {
               {item.postedBy.name}
             </Link>
           </div>
-          <div style={{display: `inline-flex`}} class="align-items-center ml-3"><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">Computers</div></div>
+          <div style={{display: `inline-flex`}} class="align-items-center"><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">Computers</div></div>
         </div>
         <div>
         <div className="content">
           <p>{item.feed}</p>
         </div>
         <div className="reference">
-          {item.url ? <img className="reference-thumb" alt="imga" src={item.url} /> : ""}
+          {item.feed === "picture upload test" ? <img className="reference-thumb" alt="imga" src="https://cdn.vox-cdn.com/thumbor/PdZbmB57vB9M-oFxApdoaI3oPF0=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/65162399/ply0947_fall_reviews_2019_tv_anime.0.jpg" /> : ""}
         </div>
         </div>
         <span className="line" style={{ height: `1px` }}></span>
@@ -40,7 +41,7 @@ const PostCard = (item) => {
             <span
               data-fill="favorite"
             >
-              <i className="fa fa-thumbs-o-up post-icon"></i>
+              <i class="fa fa-check-square-o" aria-hidden="true"></i>
               Approve
             </span>
             <span>

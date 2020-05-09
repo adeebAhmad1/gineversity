@@ -57,7 +57,8 @@ class index extends Component {
         const { auth, profile, Feed, TopicList } = this.props;
         return <div className="content">
 
-            <nav className="sidebar ">
+            <nav className="sidebar" style={{position: `relative`, flex: `0 0 20%`}}>
+                <div style={{position: `sticky`, top: 0}}>
                 <h6 onClick={() => window.innerWidth < 1000 ? this.refs.dropdown.classList.toggle("display_on_short") : ""} className={"sidebar-heading"}><span className="fa fa-feed mr-2"></span> Communities</h6>
                 <div className={`hide_on_click ${window.innerWidth < 1000 ? "display_on_short" : ""}`} ref="dropdown">
                     <ul className="side-nav">
@@ -84,14 +85,17 @@ class index extends Component {
                         </ul>
                     </div>
                 </div>
-                {window.innerWidth < 1000 ? <div style={{ width: `100%` }}>
+                {window.innerWidth < 1000 ? <div style={{ position: `relative`,width: `100%` }}>
+                    <div>
                     <div className="right-side-border">
                         <h2 className="right-side-heading-h" onClick={() => window.innerWidth < 1000 ? this.refs.courses.classList.toggle("display_on_short") : ""}>Recommended Courses</h2>
                         <ul ref="courses" className={`right-side-list ${window.innerWidth < 1000 ? "display_on_short" : ""}`}>
                             {this.renderCoursesLinks(TopicList)}
                         </ul>
                     </div>
+                    </div>
                 </div> : ""}
+                </div>
             </nav>
             <div className="center1">
                 {auth && profile && <Suspense fallback={<Fragment />}><AddPost profile={profile} list={TopicList} submit={this.submit} /></Suspense>}
@@ -99,8 +103,8 @@ class index extends Component {
                     <List list={Feed} />
                 </Suspense>
             </div>
-            {window.innerWidth > 1000 ? <div className="right-side">
-                <div className="right-side-border">
+            {window.innerWidth > 1000 ? <div className="right-side" style={{ position: `relative`,overflow: `visible`}}>
+                <div className="right-side-border" style={{position: `sticky`, top: 0}}>
                     <h2 className="right-side-heading-h">Recommended Courses</h2>
                     <ul className="right-side-list">
                         {this.renderCoursesLinks(TopicList)}

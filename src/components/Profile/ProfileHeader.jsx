@@ -26,7 +26,7 @@ class ProfileHeader extends Component {
         </div>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-6" style={{margin: `0 auto`}}>
+            <div className="col-lg-9" style={{marginLeft: `auto`}}>
               <div className="p-3">
                 {this.props.condition ? buttons.map((el,i)=> i=== this.props.index ? <button key={i} className="pagination_profile page_active"> {el} </button> : <Link key={i} to={pages[i]} className="pagination_profile"> {el} </Link>) : <h5>Timeline</h5>}
               </div>

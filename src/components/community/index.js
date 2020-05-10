@@ -55,7 +55,7 @@ class index extends Component {
 
     render() {
         const { auth, profile, Feed, TopicList } = this.props;
-        return <div className="content community_content" style={{width: `90%`,margin: `0 auto`}}>
+        return <div className="content">
             <nav className="sidebar" style={{position: `relative`, flex: `0 0 20%`}}>
                 <div style={{position: `sticky`, top: `113px`}}>
                 <h6 onClick={() => window.innerWidth < 1000 ? this.refs.dropdown.classList.toggle("display_on_short") : ""} className={"sidebar-heading"}><span className="fa fa-feed mr-2"></span> Communities</h6>

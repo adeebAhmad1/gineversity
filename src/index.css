@@ -268,3 +268,8 @@ button{
 .post-option{
   margin-right: 0 !important;
 }
+
+.active_btn{
+  background-color: rgb(192, 57, 43) !important;
+  color: #fff !important
+}

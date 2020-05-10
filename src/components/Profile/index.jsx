@@ -7,6 +7,12 @@ import PostCard from "../card/PostCard"
 import PrivateInfo from './PrivateInfo';
 import { Link } from 'react-router-dom';
 class Profile extends Component {
+  state={
+    width: window.innerWidth
+  }
+  componentDidMount(){
+    window.addEventListener("resize",()=> this.setState({width: window.innerWidth}))
+  }
   renderCoursesLinks=(TopicList)=> {
     if (TopicList && TopicList.length > 0)
         return TopicList.slice(0, 5).map(i => {
@@ -42,12 +48,16 @@ class Profile extends Component {
       <div>
         <Navbar />
         <ProfileHeader condition={condition} index={0} />
-        <div className="container-fluid" style={{zIndex: -1}}>
-        <div className="row" style={{zIndex: -1}}>
-          {condition ? <PersonalInfo /> : <div className="col-lg-3 col-md-6" style={{marginTop: `150px`}}><div className="info_wrapper"><Link to="/" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link></div></div>}
-          {window.innerWidth < 1000 ? <Fragment>
+        <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-3 col-md-12 mb-md-5 mb-sm-5 personal_info_wrapper" style={{ marginTop: `150px` }}>
+            {condition ? <PersonalInfo /> : <div className="info_wrapper">
+              <Link to="/" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link>
+            </div>}
+          </div>
+          {this.state.width < 1000 ? <Fragment>
+          <div className="col-lg-3 col-md-12 mb-md-5 mb-sm-5">
             {condition ? <PrivateInfo /> :
-          <div className="col-lg-3 col-md-6">
             <div className="right-side" style={{width: `100%`}}>
               <div className="right-side-border" style={{width: `100%`}}>
                 <h2 className="right-side-heading-h">Recommended Courses</h2>
@@ -55,8 +65,8 @@ class Profile extends Component {
                   {this.renderCoursesLinks(TopicList)}
                 </ul>
               </div>
+              </div>}
             </div>
-          </div>}
           </Fragment> : ""}
           <div className="col-lg-6 col-md-12">
             <PostCard {...obj}/>
@@ -64,18 +74,19 @@ class Profile extends Component {
             <PostCard {...obj}/>
           </div>
           {
-            window.innerWidth > 1000 ? <Fragment>
-              {condition ? <PrivateInfo /> :
+            this.state.width > 1000 ? <Fragment>
           <div className="col-lg-3">
-            <div className="right-side" style={{width: `100%`}}>
-              <div className="right-side-border" style={{width: `100%`}}>
-                <h2 className="right-side-heading-h">Recommended Courses</h2>
-                <ul className="right-side-list">
-                  {this.renderCoursesLinks(TopicList)}
-                </ul>
+            {condition ? <PrivateInfo /> :
+              <div className="right-side" style={{width: `100%`}}>
+                <div className="right-side-border" style={{width: `100%`}}>
+                  <h2 className="right-side-heading-h">Recommended Courses</h2>
+                  <ul className="right-side-list">
+                    {this.renderCoursesLinks(TopicList)}
+                  </ul>
+                </div>
               </div>
+            }
             </div>
-          </div>}
             </Fragment> : ""
           }
         </div>

@@ -43,9 +43,11 @@
   }
 }
 .post {
-  background-color: #f7f7f7;
+  background-color: #f0f0f0;
   margin-bottom: 2rem;
   border-radius: 5px;
+  width: 90% !important;
+  margin: 1rem auto
 }
 /* ///////////////////////////////////////////// post head */
 
@@ -55,17 +57,17 @@
   width: 95%;
   padding: 1rem 0rem;
   margin: 0 auto;
-  border-bottom: 1px solid #dcdde1;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .post-user-detail {
   margin-left: 20px;
 }
 .post-name {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #e74c3c
+  color: #666
 }
 .post-sub-name {
   font-size: 14px;
@@ -91,9 +93,10 @@
 }
 .post-option:hover .post-head-icon {
   color: #e74c3c;
+  
 }
 .post-head-icon {
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 /* ///////////////////////////////////////////// post body */
 .post-body {
@@ -112,7 +115,7 @@
   display: flex;
   justify-content: space-between;
   padding: 14px 30px;
-  border-top: 1px solid #dcdde1;
+  border-top: 1px solid #d0d0d0;
 }
 .post-icons {
   display: flex;

@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class PrivateInfo extends Component {
   render () {
     return (
-      <div className="col-lg-3">
-        <div className="info_wrapper">
+        <div className="private_one">
+          <div className="info_wrapper">
           <div className="side_content">
             <h6>Credentials <span style={{float: `right`,color: `#ff3000`}}><i class="fa fa-pencil"></i></span></h6>
             <hr/>
@@ -29,7 +29,7 @@ class PrivateInfo extends Component {
           <hr/>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, sed aspernatur placeat deleniti autem odio</p>
         </div>
-      </div>
+        </div>
     )
   }
 }

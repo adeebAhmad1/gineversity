@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class PersonalInfo extends Component {
   render() {
     return (
-      <div className="col-lg-3" style={{ marginTop: `100px` }}>
         <div className="info_wrapper">
           <div className="post_share">
             <div className="total_posts">
@@ -21,7 +20,7 @@ class PersonalInfo extends Component {
               <li className="list_content">
                 <h6>
                   <i className="fa fa-volume-control-phone phone_no_icon "></i> 
-                  <span className="detail"> +92 300 000 0000 <br/><span className="heading_content"> Phone No </span> </span>
+                  <span className="detail">+92 300 000 0000<br/><span className="heading_content"> Phone No </span> </span>
                 </h6>
               </li>
               <li className="list_content">
@@ -39,7 +38,6 @@ class PersonalInfo extends Component {
             </ul>
           </div>
         </div>
-      </div>
     );
   }
 }

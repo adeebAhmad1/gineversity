@@ -12,7 +12,7 @@ class ProfileHeader extends Component {
           {
             this.props.condition ?
             <div className=""><input type="file" name="aa" id="background" style={{display: `none`}} />
-            <label htmlFor="background" className="btn btn-light"><i className="fa fa-camera"></i> Change</label></div> :
+            <label htmlFor="background" className="btn btn-light"><i className="fa fa-camera"></i> {window.innerWidth < 600 ? "" : "Change"} </label></div> :
             ""
           }
           </div>
@@ -24,7 +24,7 @@ class ProfileHeader extends Component {
             <h3>Testing </h3>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid m_top_200">
           <div className="row">
             <div className="col-lg-9" style={{marginLeft: `auto`}}>
               <div className="p-3">

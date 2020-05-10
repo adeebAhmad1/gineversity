@@ -57,7 +57,7 @@ class index extends Component {
         const { auth, profile, Feed, TopicList } = this.props;
         return <div className="content community_content" style={{width: `90%`,margin: `0 auto`}}>
             <nav className="sidebar" style={{position: `relative`, flex: `0 0 20%`}}>
-                <div style={{position: `sticky`, top: 0}}>
+                <div style={{position: `sticky`, top: `113px`}}>
                 <h6 onClick={() => window.innerWidth < 1000 ? this.refs.dropdown.classList.toggle("display_on_short") : ""} className={"sidebar-heading"}><span className="fa fa-feed mr-2"></span> Communities</h6>
                 <div className={`hide_on_click ${window.innerWidth < 1000 ? "display_on_short" : ""}`} ref="dropdown">
                     <ul className="side-nav">
@@ -103,7 +103,7 @@ class index extends Component {
                 </Suspense>
             </div>
             {window.innerWidth > 1000 ? <div className="right-side" style={{ position: `relative`,overflow: `visible`}}>
-                <div className="right-side-border" style={{position: `sticky`, top: 0}}>
+                <div className="right-side-border" style={{position: `sticky`, top: `113px`}}>
                     <h2 className="right-side-heading-h">Recommended Courses</h2>
                     <ul className="right-side-list">
                         {this.renderCoursesLinks(TopicList)}

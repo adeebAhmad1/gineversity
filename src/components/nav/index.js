@@ -76,12 +76,14 @@ class index extends Component {
                 <h6 style={logoNameMob}>GENIVERSITY</h6>
                 <button className="btn btnHam" onClick={(e) => this.setState({ isActive: !isActive })}><span className="fa fa-bars"></span></button>
             </div>
-            {isActive && <div className="input-group col-lg-3 col-12 p-3">
-                <input type="text" className="form-control" placeholder="Search Geniversity" />
-                <div className="input-group-append">
-                    <button className="btn btn-outline-danger bg-danger" type="button"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
+            {
+                isActive && <div className="input-group col-lg-3 col-12 p-3">
+                    <input type="text" className="form-control" placeholder="Search Geniversity" />
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-danger bg-danger" type="button"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
+                    </div>
                 </div>
-            </div>}
+            }
             {isActive && this.renderMobActiveLink()}
             {isActive && <div className="m-2"></div>}
             {isActive && <React.Fragment>{(!Auth || isError || !profile) ? <Link className="btn-login-nav col-lg-1 col-12 p-1" to='login'>Login</Link> :
@@ -120,7 +122,7 @@ class index extends Component {
                     <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style={{ width: '30px', height: '30px', marginRight: '8px', borderRadius: '1000px' }} />
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
+                        <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
                         <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
                         <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
                         <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
@@ -136,7 +138,7 @@ class index extends Component {
         const { Auth, isError, profile } = this.props;
         if (width && width !== 0 && width >= 992)
             return (
-                <div className="navbar d-flex flex-lg-row flex-column col-12 p-4">
+                <div style={{position: `sticky`,top: `0`,zIndex: 1001}} className="navbar d-flex flex-lg-row flex-column col-12 p-4">
                     <h6 style={logoName}>GENIVERSITY</h6>
                     <div className="input-group col-lg-3 col-12">
                         <input type="text" className="form-control" placeholder="Search Geniversity" />

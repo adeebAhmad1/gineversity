@@ -128,7 +128,6 @@ button{
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  transform: translateY(-12px);
 }
 .list_content .detail{
   display: inline-block;
@@ -162,7 +161,7 @@ button{
 }
 .add_course i{
   font-size: 1.8rem;
-  transform: translateY(50%);
+  display: inline-block;
 }
 .progress_bar::after{
   content: "";

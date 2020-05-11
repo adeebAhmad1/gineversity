@@ -70,13 +70,7 @@ button{
   border: 5px solid #fff;
   margin-bottom: 0;
 }
-.sidebar-heading{
-  /* font-family: "Open Sans"; */
-  text-transform: uppercase;
-  font-weight: 600 !important;
-  font-size: 1rem !important;
-  background-color: #e0e0e0 !important;
-}
+
 .profile_header_wrapper{
   position: relative;
 }
@@ -168,6 +162,7 @@ button{
 }
 .add_course i{
   font-size: 1.8rem;
+  transform: translateY(50%);
 }
 .progress_bar::after{
   content: "";
@@ -272,4 +267,54 @@ button{
 .active_btn{
   background-color: rgb(192, 57, 43) !important;
   color: #fff !important
+}
+
+.course_details_wrapper{
+  position: absolute;
+  top: 0;
+  height: 0;
+  overflow: hidden;
+  width: 300px;
+  z-index: 10;
+  background-color: #fff;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  will-change: height;
+}
+.addcoursebtn{
+  width: 50%    
+  }
+@media (max-width: 1000px) {
+ .addcoursebtn{
+  width: 80%    
+  }
+}
+@media (max-width: 900px){
+  .popup__box{
+    width: 90% !important
+  }
+}
+@media (max-width: 600px){
+  .popup__box{
+    width: 90% !important
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.course_details{
+  white-space: normal !important ;
+}
+.card_outer:hover .course_details_wrapper,.course_details_wrapper:hover{
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

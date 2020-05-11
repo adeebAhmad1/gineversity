@@ -20,19 +20,19 @@ class PersonalInfo extends Component {
               <li className="list_content">
                 <h6>
                   <i className="fa fa-volume-control-phone phone_no_icon "></i> 
-                  <span className="detail">+92 300 000 0000<br/><span className="heading_content"> Phone No </span> </span>
+                  <span className="detail">+92 300 000 0000 </span>
                 </h6>
               </li>
               <li className="list_content">
                 <h6>
                   <i className="fa fa-envelope envalope_icon"></i>
-                  <span className="detail"> gmail@email.com <br/><span className="heading_content"> Email Address </span></span>
+                  <span className="detail"> gmail@email.com </span>
                 </h6>
               </li>
               <li className="list_content">
                 <h6>
                   <i className="fa fa-map-marker location_icon"></i>
-                  <span className="detail"> N/A <br/> <span className="heading_content">&nbsp;</span></span>
+                  <span className="detail"> N/A </span>
                 </h6>
               </li>
             </ul>

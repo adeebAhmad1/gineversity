@@ -12,13 +12,13 @@ class PrivateInfo extends Component {
               <li className="list_content">
                 <h6>
                   <i class="fa fa-id-card education_icon" aria-hidden="true"></i>
-                  <span className="detail"> Add Education <br/><span className="heading_content"> Education </span> </span>
+                  <span className="detail"> Superior University Lahore </span>
                 </h6>
               </li>
               <li className="list_content">
                 <h6>
                   <i class="fa fa-briefcase job_icon" aria-hidden="true"></i>
-                  <span className="detail"> Add Job <br/><span className="heading_content"> Job </span></span>
+                  <span className="detail"> Web Developer </span>
                 </h6>
               </li>
             </ul>

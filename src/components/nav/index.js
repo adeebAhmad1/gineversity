@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 const logoName = { fontSize: '18px', fontWeight: 'bold', color: '#c0392b', fontFamily: `'Montserrat', sans-serif` };
 const logoNameMob = { fontSize: '20px', fontWeight: 'bold', color: '#c0392b', fontFamily: `'Montserrat', sans-serif` };
+const navbar= {position: `sticky`,top: 0,zIndex:5000}
 class index extends Component {
 
     constructor(props) {
@@ -71,19 +72,17 @@ class index extends Component {
     renderMobileNav() {
         const { isActive } = this.state;
         const { Auth, isError, profile } = this.props;
-        return <div className="navbar d-flex flex-column col-12 p-3">
+        return <div className="navbar d-flex flex-column col-12 p-3" style={navbar}>
             <div className="d-flex flex-row justify-content-between align-items-center col-12 p-3">
                 <h6 style={logoNameMob}>GENIVERSITY</h6>
                 <button className="btn btnHam" onClick={(e) => this.setState({ isActive: !isActive })}><span className="fa fa-bars"></span></button>
             </div>
-            {
-                isActive && <div className="input-group col-lg-3 col-12 p-3">
-                    <input type="text" className="form-control" placeholder="Search Geniversity" />
-                    <div className="input-group-append">
-                        <button className="btn btn-outline-danger bg-danger" type="button"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
-                    </div>
+            {isActive && <div className="input-group col-lg-3 col-12 p-3">
+                <input type="text" className="form-control" placeholder="Search Geniversity" />
+                <div className="input-group-append">
+                    <button className="btn btn-outline-danger bg-danger"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
                 </div>
-            }
+            </div>}
             {isActive && this.renderMobActiveLink()}
             {isActive && <div className="m-2"></div>}
             {isActive && <React.Fragment>{(!Auth || isError || !profile) ? <Link className="btn-login-nav col-lg-1 col-12 p-1" to='login'>Login</Link> :
@@ -91,10 +90,10 @@ class index extends Component {
                     <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style={{ width: '30px', height: '30px', marginRight: '8px', borderRadius: '1000px' }} />
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
-                        <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
-                        <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
-                        <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
+                        <Link to="/profile" className="dropdown-item">View Profile</Link>
+                        <Link to="/otherprofile" className="dropdown-item">View Other Profile</Link>
+                        <Link to="/mycourses" className="dropdown-item">My Courses</Link>
+                        <button className="dropdown-item" onClick={(e) => this.props.logOut()}>Logout</button>
                     </div>
             {isActive && <div className="m-2"></div>}
             {isActive && <span className="fa fa-bell link-nav p-3" style={{ fontSize: '20px' }}></span>}
@@ -104,7 +103,7 @@ class index extends Component {
     renderTabletNav() {
         const { isActive } = this.state;
         const { Auth, isError, profile } = this.props;
-        return <div className="navbar d-flex flex-column col-12 p-3">
+        return <div className="navbar d-flex flex-column col-12 p-3" style={navbar}>
             <div className="d-flex flex-row justify-content-between align-items-center col-12 p-3">
                 <h6 style={logoNameMob}>GENIVERSITY</h6>
                 <button className="btn btnHam" onClick={(e) => this.setState({ isActive: !isActive })}><span className="fa fa-bars"></span></button>
@@ -112,7 +111,7 @@ class index extends Component {
             {isActive && <div className="input-group col-lg-3 col-12 p-3">
                 <input type="text" className="form-control" placeholder="Search Geniversity" />
                 <div className="input-group-append">
-                    <button className="btn btn-outline-danger bg-danger" type="button"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
+                    <button className="btn btn-outline-danger bg-danger"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
                 </div>
             </div>}
             {isActive && this.renderTabActiveLink()}
@@ -122,10 +121,10 @@ class index extends Component {
                     <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style={{ width: '30px', height: '30px', marginRight: '8px', borderRadius: '1000px' }} />
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
-                        <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
-                        <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
-                        <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
+                    <Link to="/profile" className="dropdown-item">View Profile</Link>
+                        <Link to="/otherprofile" className="dropdown-item">View Other Profile</Link>
+                        <Link to="/mycourses" className="dropdown-item">My Courses</Link>
+                        <button className="dropdown-item" onClick={(e) => this.props.logOut()}>Logout</button>
                     </div>
                     {isActive && <div className="m-2"></div>}
                     {isActive && <span className="fa fa-bell link-nav p-3" style={{ fontSize: '20px' }}></span>}
@@ -138,12 +137,12 @@ class index extends Component {
         const { Auth, isError, profile } = this.props;
         if (width && width !== 0 && width >= 992)
             return (
-                <div style={{position: `sticky`,top: `0`,zIndex: 1001}} className="navbar d-flex flex-lg-row flex-column col-12 p-4">
+                <div className="navbar d-flex flex-lg-row flex-column" style={navbar}>
                     <h6 style={logoName}>GENIVERSITY</h6>
                     <div className="input-group col-lg-3 col-12">
                         <input type="text" className="form-control" placeholder="Search Geniversity" />
                         <div className="input-group-append">
-                            <button className="btn btn-outline-danger bg-danger" type="button"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
+                            <button className="btn btn-outline-danger bg-danger"><span className="fa fa-search" style={{ color: 'white' }}></span></button>
                         </div>
                     </div>
                     {this.renderActiveLink()}
@@ -153,10 +152,10 @@ class index extends Component {
                             <img src={profile.image ? profile.img : Avat} alt="profile" className="dropdown-toggle dropleft" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 style={{ width: '40px', height: '40px', marginRight: '8px', borderRadius: '1000px' }} />
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                            <Link to="/profile" className="dropdown-item" type="button">View Profile</Link>
-                            <Link to="/otherprofile" className="dropdown-item" type="button">View Other Profile</Link>
-                            <Link to="/mycourses" className="dropdown-item" type="button">My Courses</Link>
-                                <button className="dropdown-item" type="button" onClick={(e) => this.props.logOut()}>Logout</button>
+                            <Link to="/profile" className="dropdown-item">View Profile</Link>
+                            <Link to="/otherprofile" className="dropdown-item">View Other Profile</Link>
+                            <Link to="/mycourses" className="dropdown-item">My Courses</Link>
+                                <button className="dropdown-item" onClick={(e) => this.props.logOut()}>Logout</button>
                             </div>
                         </div>}
                 </div>

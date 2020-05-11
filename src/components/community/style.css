@@ -9,10 +9,11 @@
   background-color: #fff;
 }
 .sidebar-heading {
+  text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #e0e0e0;
   color: #e74c3c;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #f5f6f7;
   border-bottom: 1px solid #dddfe2;
   padding: 12px 0;
   text-align: center;
@@ -199,8 +200,8 @@ ul > li {
   color: #e74c3c;
 }
 .side-img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin-right: 14px;
 }
@@ -288,7 +289,7 @@ ul > li {
 .right-side-heading-h {
   color: #e74c3c;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   background-color: #f5f6f7;
   border-bottom: 1px solid #dddfe2;
   padding: 13px 0;
@@ -296,7 +297,7 @@ ul > li {
 }
 .right-side-list {
   list-style: none;
-  padding: 0 !important;
+  padding: 10px 0 !important;
 }
 .right-side-item {
   position: relative;
@@ -324,8 +325,8 @@ ul > li {
   color: #e74c3c;
 }
 .right-side-img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin-right: 14px;
 }

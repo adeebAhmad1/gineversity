@@ -21,8 +21,7 @@ import Messages from '../components/Messages';
 export function Routes() {
     return <div>
         <Switch>
-        <Route exact path='/community' component={Messages} />
-        {/* <Route exact path='/community' component={CommunityPage} /> */}
+        <Route exact path='/community' component={CommunityPage} />
         <Route exact path='/credits' component={CreditsPage} />
         <Route exact path='/watchcourses' component={WatchcoursePage} />
         <Route exact path='/watchplace' component={WatchplacePage} />

@@ -52,7 +52,7 @@ class Profile extends Component {
         <div className="row">
           <div className="col-lg-3 col-md-12 mb-md-5 mb-sm-5 personal_info_wrapper" style={{ marginTop: `150px` }}>
             {condition ? <PersonalInfo /> : <div className="info_wrapper">
-              <Link to="/" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link>
+              <Link to="/inbox" className="btn text-danger" style={{width: `100%`}}><i className="fa fa-envelope"></i> Send Message</Link>
             </div>}
           </div>
           {this.state.width < 1000 ? <Fragment>

@@ -1,14 +1,14 @@
-.coursedetails-learn {
+.coursedetails-learn-w {
   margin-right: auto
 }
-.coursedetails-center{
+.coursedetails-center-w{
   margin-right: auto
 }
-.coursedetails {
+.coursedetails-w{
   padding: 2rem 5rem 0 5rem ;
 }
-.coursedetails-bottom {
-  padding: 2rem 5rem ;
+.coursedetails-bottom-w {
+  padding: 0rem 5rem ;
 }
 .two-cols{
   flex: 1;
@@ -16,21 +16,22 @@
 .coursedetails-right{
   flex: 0 0 30%
 }
-@media (max-width: 1000px) {
-  .coursedetails-bottom {
+@media (max-width: 700px) {
+  .coursedetails-bottom-w {
     flex-direction: column !important;
-    text-align: center;
     margin: 0 auto;
   }
-  .coursedetails{
-    padding-bottom: 2rem
+  .coursedetails-w{
+    padding: 1rem 2rem;
+    text-align: center
   }
   .coursedetails-right{
     padding-bottom: 2rem
   }
-  .coursedetails-learn{
+  .coursedetails-learn-w{
     margin: 0 auto;
-    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+  padding-bottom: 0;
   }
   .coursedetails-instructor-heading{
     margin: 0 !important;
@@ -40,9 +41,9 @@
     letter-spacing: 1px;
     font-weight: 400 !important
   }
-  .coursedetails-center{
+  .coursedetails-center-w{
     margin: 0 auto;
-    padding-bottom: 2rem
+    padding-bottom: 0
   }
   .instructor{
     flex-direction: column;
@@ -54,11 +55,8 @@
   .requirement{
     text-align: center
   }
-  .coursedetails-learn{
-    margin-bottom: 2rem
-  }
-  .coursedetails-center {
-    margin-bottom: 2rem
+  .coursedetails-center-w {
+    margin: 0
   }
   .coursedetails {
     flex-direction: column !important;

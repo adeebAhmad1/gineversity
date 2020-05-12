@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/nav';
 import { connect } from 'react-redux';
-import Header from '../../components/watchplace/header';
 import Card from '../../components/watchplace/card';
+import VideoCard from '../../components/watchplace/videocard';
 import Description from '../../components/watchplace/description';
 import Footer from '../../components/footer';
 class index extends Component {
@@ -10,7 +10,7 @@ class index extends Component {
 
         return <div className="container-fluid p-0" style={{ minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
             <Navbar active={2} />
-            <Header />
+            <VideoCard />   
             <Card />
             <Description />
             <Footer />

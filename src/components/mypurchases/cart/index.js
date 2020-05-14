@@ -43,9 +43,9 @@ export default class extends React.Component {
                 </div>
                 </div>
                 {this.state.btn1 ?  
-                <Purchase id={1} title="Hello" coursetitle="My Courses"  description="describe me well" price="$40" image="https://picserio.com/data/out/218/cute-kitty-wallpapers_4320821.jpg"></Purchase>
+                <Purchase id={1} title="Hello" coursetitle="My Courses"  description="describe me well" price="$40" image="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"></Purchase>
                 :
-                <Purchase id={1} title="abc" coursetitle="My Courses" description="describe me well" price="$80" image="https://picserio.com/data/out/218/cute-kitty-wallpapers_4320821.jpg"></Purchase>
+                <Purchase id={1} title="abc" coursetitle="My Courses" description="describe me well" price="$80" image="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"></Purchase>
                 }
                 </div>
             </div>

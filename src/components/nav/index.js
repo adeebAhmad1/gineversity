@@ -270,6 +270,7 @@ class index extends Component {
                   <Link to="/profilesetting" className="dropdown-item">
                     Settings
                   </Link>
+                  <Link to="/watchcourses">Watch Course</Link>
                   <button
                     className="dropdown-item"
                     onClick={(e) => this.props.logOut()}
@@ -396,6 +397,7 @@ class index extends Component {
                   <Link to="/profilesetting" className="dropdown-item">
                     Settings
                   </Link>
+                  <Link to="/watchcourses" className="dropdown-item">Watch Course</Link>
                   <button
                     className="dropdown-item"
                     onClick={(e) => this.props.logOut()}
@@ -516,6 +518,7 @@ class index extends Component {
                 <Link to="/profilesetting" className="dropdown-item">
                   Settings
                 </Link>
+                <Link to="/watchcourses" className="dropdown-item">Watch Course</Link>
                 <button
                   className="dropdown-item"
                   onClick={(e) => this.props.logOut()}

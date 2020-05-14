@@ -666,3 +666,12 @@ input[type=number] {
   position: sticky;
   top: 100px;
 }
+.btn_wrapper{
+  display: flex;
+}
+.my_card{
+  height: 420px !important;
+}
+.add_ebook{
+  display: flex;align-items: center;justify-content: center;
+}

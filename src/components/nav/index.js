@@ -267,7 +267,7 @@ class index extends Component {
                   <Link to="/credits" className="dropdown-item">
                     Gineversity Credits
                   </Link>
-                  <Link to="/mycourses" className="dropdown-item">
+                  <Link to="/profilesetting" className="dropdown-item">
                     Settings
                   </Link>
                   <button
@@ -292,10 +292,10 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <span
+                  <Link to="/inbox"
                     className="fa fa-bell link-nav p-3"
                     style={{ fontSize: "20px" }}
-                  ></span>
+                  ></Link>
                 )}
               </div>
             )}
@@ -393,7 +393,7 @@ class index extends Component {
                   <Link to="/credits" className="dropdown-item">
                     Gineversity Credits
                   </Link>
-                  <Link to="/mycourses" className="dropdown-item">
+                  <Link to="/profilesetting" className="dropdown-item">
                     Settings
                   </Link>
                   <button
@@ -418,10 +418,10 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <span
+                  <Link  to="/inbox"
                     className="fa fa-bell link-nav p-3"
                     style={{ fontSize: "20px" }}
-                  ></span>
+                  ></Link>
                 )}
               </div>
             )}
@@ -456,10 +456,10 @@ class index extends Component {
             </div>
           </div>
           {this.renderActiveLink()}
-          <span
+          <Link to="/inbox"
             className="fa fa-bell link-nav"
             style={{ fontSize: "20px" }}
-          ></span>
+          ></Link>
           {!Auth || isError ? (
             <Link className="btn-login-nav col-lg-1 col-12 p-1" to="login">
               Login
@@ -513,7 +513,7 @@ class index extends Component {
                 <Link to="/credits" className="dropdown-item">
                   Gineversity Credits
                 </Link>
-                <Link to="/mycourses" className="dropdown-item">
+                <Link to="/profilesetting" className="dropdown-item">
                   Settings
                 </Link>
                 <button

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { registerFeeds, getFeeds, getFeedsAuth } from '../../redux/actions/feedActions';
 import { Link } from 'react-router-dom';
 import Model from './model';
-const List = lazy(() => import('../community/postList'));
+import List from "../community/postList"
 const AddPost = lazy(() => import('../community/addPost'));
 
 class index extends Component {
@@ -58,6 +58,7 @@ class index extends Component {
         return <div className="content">
             <Model />
             <nav className="sidebar ">
+                <div style={{position: `sticky`, top: `100px`}}>
                 <h2 className="page-heading">Freelancer of Upwork Fiverr and PeoplePerHour</h2>
                 <h6 onClick={() => window.innerWidth < 1000 ? this.refs.dropdown.classList.toggle("display_on_short") : ""} className={"sidebar-heading"}>Communities You're In</h6>
                 <div className={`hide_on_click ${window.innerWidth < 1000 ? "display_on_short" : ""}`} ref="dropdown">
@@ -107,6 +108,7 @@ class index extends Component {
                             </div> : ""}
                         </div>}
                 </div> : ""}
+                </div>
                 {/* ////////////////////// code for mobile view end with auth  /////////////////////*/}
             </nav>
             <div className="center1">
@@ -144,12 +146,11 @@ class index extends Component {
                 {/* /////////////////// if auth add post and list //////////////////// */}
 
                 <div> {auth && profile && <Suspense fallback={<Fragment />}><AddPost profile={profile} list={TopicList} submit={this.submit} /></Suspense>}</div>
-                <div>{auth && profile && <Suspense fallback={<Fragment />}><List list={Feed} /></Suspense>}</div>
-
+                <List list={[1,2,3,4]} />
             </div>
             {/* /////////////////// normal view start  /////////////////////////////////////// */}
-            {window.innerWidth > 1000 ? <div className="right-side">
-                <div className="right-side-border">
+            {window.innerWidth > 1000 ? <div className="right-side" style={{overflow: `visible`}}>
+                <div className="right-side-border" ref="upper_container" style={{position: `sticky`,top: `103.36805725097656px`}}>
                     <h2 className="sidebar-heading member-margin">Members</h2>
                     <ul className="right-side-list">
                         {this.renderCoursesLinks(TopicList)}
@@ -165,7 +166,7 @@ class index extends Component {
 
                 {/* ///////////////////// if auth  displays recommended //////////////// */}
                 {auth && profile ?
-                    <div> {window.innerWidth > 1000 ? <div className="left-side about-section">
+                    <div style={{position: `sticky`,top: `298.38543701171875px`}}> {window.innerWidth > 1000 ? <div className="left-side about-section">
                         <div className="left-side-border">
                             <h6 className="sidebar-heading" style={{padding: "12px 60px"}} >Recommended to You</h6>
                             <ul className="side-nav">
@@ -175,7 +176,7 @@ class index extends Component {
                     </div>
                         : ""}</div>
                     // {/* ////////////////// else about box //////////////////////////////// */}
-                    : <div>
+                    : <div style={{position: `sticky`,top: `298.38543701171875px`}}>
                         {window.innerWidth > 1000 ? <div className="left-side about-section">
                             <div className="left-side-border">
                                 <h2 className="sidebar-heading">About Community</h2>

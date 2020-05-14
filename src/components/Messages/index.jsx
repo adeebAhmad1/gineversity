@@ -4,6 +4,7 @@ import ListItems from '../Profile/ListItems';
 import Message from './Message';
 import Header from "../nav"
 import { Link } from 'react-router-dom';
+import Footer from "../footer"
 class Messages extends Component {
   state={
     width: window.innerWidth
@@ -105,6 +106,7 @@ class Messages extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

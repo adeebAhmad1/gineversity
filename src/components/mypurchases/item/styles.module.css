@@ -24,11 +24,11 @@
 .title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   color: rgba(0, 0, 0, 0.8);
 }
 .disc {
-  font-size: 16px;
+  font-size: 13px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow: hidden;
   height: 40px;
@@ -36,7 +36,7 @@
 }
 .del {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   cursor: pointer;
 }
 .right {

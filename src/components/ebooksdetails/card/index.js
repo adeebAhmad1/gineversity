@@ -23,11 +23,8 @@ export default class extends React.Component {
                 </div>
                 <div className={"btninline d-flex mb-3"}>
                     <Link to={"/mypurchases"} className={"btn btn-outline-danger mr-3 btnBuy"}>
-                        Add to My Purchase
+                        Add to My Cart
                      </Link>
-                    <a href={"#popup"} className={"btn btn-outline-danger btnBuy"}>
-                        Buy Now
-                    </a>
                 </div>
                 <div className={"appinfo d-flex p-3"} style={{width: `100%`}}>
                     <img src={"https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?size=626&ext=jpg"} className={"right-image"} style={{ width: "7rem" }} alt="EBook" />

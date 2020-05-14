@@ -11,7 +11,7 @@ export default class extends React.Component {
          
             <div className={"coursedetails-center justify-content-center d-flex flex-column"}>
            <span className={"m-0 p-0"} style={{fontSize: "30px", fontWeight: "bold"}}>
-                {"Introduction to Fixed-Wing Drone Design"}
+                Introduction to Fixed-Wing Drone Design
                 </span>
                 <span className={"mb-4 mt-4"} style={{fontSize: "20px"}}>
                 Learn how to design fixed-wing drones from specific missions.<br/>

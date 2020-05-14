@@ -9,12 +9,12 @@
 .title {
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
   font-weight: 500;
-  font-size: 30px;
+  font-size: 25px;
   color: rgba(0, 0, 0, 0.8);
 }
 .coursetitle {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 20px;
 }
 .disc {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -23,7 +23,7 @@
 }
 .mdisc {
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: 16px;
+  font-size: 13px;
   overflow: hidden;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -86,7 +86,7 @@
 .coPrice {
   color: rgb(192, 57, 43);
   display: block;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 800;
 }
 .btnCheckOut {

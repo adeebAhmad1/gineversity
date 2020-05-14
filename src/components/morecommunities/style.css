@@ -1,9 +1,9 @@
 .cardhover:hover{
-  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-  animation: cardhover 1s;
+  box-shadow: 0 5px 15px rgba( 0,0 ,0 ,0.4);
+  transition: all 0.3s;
 }
 .cardhover{
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
 }
 
 
@@ -79,115 +79,6 @@
 .options:hover {
   color: black; /* Fallback */
   color: rgba(0, 0, 0, 0.3);
-}
-
-.f-card .content {
-  background-color: #eee;
-  clear: both;
-  font-family: Montserrat, sans-serif;
-  font-size: 17px;
-  line-height: 1;
-  padding: 0 !important;
-}
-.reference {
-  width: 100%;
-}
-.reference-thumb {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.social-buttons span:hover{
-  color: #dc3545;
-  letter-spacing: 1.5px;
-}
-.social-buttons span:hover i{
-  color: #dc3545;
-  letter-spacing: 1.5px;
-}
-@media only screen and (max-width: 600px){
-  .f-card .right {
-    padding: 0 !important;
-  }
-}
-.reference-content {
-  border: 2px solid black;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-top: 0;
-  padding: 10px 12px 10px 12px;
-}
-
-.reference:hover .reference-content {
-  border-color: black; /* Fallback */
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-.reference-title {
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-
-  margin-bottom: 5px;
-}
-
-.reference-subtitle {
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.reference-font {
-  color: #90949c;
-  font-family: Montserrat, sans-serif;
-  font-size: 11px;
-  line-height: 11px;
-  text-transform: uppercase;
-
-  padding-top: 9px;
-}
-
-.social {
-  margin-top: 12px;
-}
-.social-buttons {
-  color: #7f7f7f;
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #e5e5e5;
-  padding-top: 4px;
-}
-.center2{
-  background-color: #fff !important;
-}
-.social-buttons span {
-  font-size: 12px;
-  margin: 0 auto;
-  flex-grow: 1;
-  padding: 4px 4px 4px 0;
-  transition: all 0.25s ease-in;
-  text-align: center;
-}
-
-.social-buttons span:hover {
-  cursor: pointer;
-}
-.left{
-  float: left;
-  font-size: 0.7rem;
-}
-.right{
-  font-size: 0.7rem;
-  float: right;
-  padding: 0 !important;
-}
-.social-buttons span i {
-  padding-right: 4px;
 }
 
 .left-side-heading-h {

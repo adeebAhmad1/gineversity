@@ -212,37 +212,7 @@ button{
   background-color: #fa9c9c;
   color: #f41a1a;
 }
-@media only screen and (max-width: 580px){
-  .private_one{
-    margin-bottom: 30px;
-  }
-}
-@media only screen and (max-width: 1000px){
-  .profile_image_wrapper{
-    left: 50%;
-    transform: translate(-50%,-25%);
-  }
-  .community_content{
-    width: 100%;
-  }
-  .m_top_200{
-    margin-top: 200px;
-  }
-  .personal_info_wrapper{
-    margin-top: 0 !important;
-    margin-bottom: 30px;
-  }
-  .sidebar{
-    position: sticky !important;
-    z-index: 100;
-    padding: 10px 0 !important;
-    background-color: #fff;
-    top: 0;
-  }
-  .content{
-    font-size: 15px !important;
-  }
-}
+
 .right-side-border {
   border: 1px solid #ddd;
 }
@@ -271,9 +241,9 @@ button{
 .course_details_wrapper{
   position: absolute;
   top: 0;
-  /* height: 0; */
-  /* overflow: hidden; */
-  width: 300px;
+  height: 0;
+  overflow: hidden;
+  width: 350px;
   z-index: 10;
   background-color: #fff;
   transition: all 0.3s;
@@ -282,6 +252,10 @@ button{
 }
 .addcoursebtn{
   width: 50%    
+  }
+  .course_details_wrapper:hover,.card_outer:hover .course_details_wrapper{
+    height: max-content;
+    overflow: visible;
   }
 @media (max-width: 1000px) {
  .addcoursebtn{
@@ -323,29 +297,29 @@ input[type=number] {
 .course_details_wrapper::before,.course_details_wrapper::after{
   content: "";
   width: 30px;
-  height: 50%;
-  z-index: -1;
+  height: 30px;
+  /* z-index: -1; */
   position: absolute;
-  left: 0;
+  left: -15px;
   background-color: #fff;
 }
 .course_details_wrapper::before{
-  transform: skewX(-20deg);
-  top: 0;
+  transform: skewX(45deg);
+  top: 30%;
 }
 .course_details_wrapper::after{
-  bottom: 0;
-  transform: skewX(20deg);
+  bottom: 70%;
+  transform: skewX(-45deg);
 }
 .card_outer:last-child .course_details_wrapper::before, .card_outer:last-child .course_details_wrapper::after{
-  right: 0;
+  right: -15px;
   left: auto;
 }
 .card_outer:last-child .course_details_wrapper::before{
-  transform: skewX(20deg);
+  transform: skewX(-45deg);
 }
 .card_outer:last-child .course_details_wrapper::after{
-  transform: skewX(-20deg);
+  transform: skewX(45deg);
 }
 .message_outer_wrapper{
   position: relative;
@@ -360,16 +334,17 @@ input[type=number] {
   overflow: hidden;
 }
 .messages_sidebar_left,.messages_sidebar_right{
-  flex: 0 0 25%;
+  flex: 0 0 27%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+  position: relative;
   padding: 1rem;
 }
 .messages_content{
-  flex: 0 0 50%;
+  flex: 0 0 44%;
   height: 80vh;
 }
 
@@ -395,9 +370,10 @@ input[type=number] {
 }
 .message_m{
   display: flex;
-  max-width: 50%;
+  max-width: 60%;
   clear: both;
   position: relative;
+  margin: 10px;
 }
 .outgoing{
   float: right;
@@ -426,9 +402,6 @@ input[type=number] {
   margin-left: 10px;
   flex-direction: column;
 }
-.user_messages{
-  display: flex;
-}
 .messages_sidebar_right .message_sidebar_inner{
   display: flex;
   height: 100%;
@@ -456,6 +429,7 @@ input[type=number] {
   font-size: 1.3rem;
   color: #aaa;
 }
+.comments_wrapper::-webkit-scrollbar-track,
 .message_sidebar_inner::-webkit-scrollbar-track
 ,.messages::-webkit-scrollbar-track
 {
@@ -464,6 +438,7 @@ input[type=number] {
   background-color: transparent;
 }
 
+.comments_wrapper::-webkit-scrollbar,
 .message_sidebar_inner::-webkit-scrollbar
 ,.messages::-webkit-scrollbar
 {
@@ -472,6 +447,7 @@ input[type=number] {
 	background-color: transparent;
 }
 
+.comments_wrapper::-webkit-scrollbar-thumb,
 .message_sidebar_inner::-webkit-scrollbar-thumb
 ,.messages::-webkit-scrollbar-thumb
 {
@@ -497,16 +473,51 @@ input[type=number] {
   padding: 1rem;
   border-bottom: 1px solid #aaa;
   transition: all 0.3s;
+  display: flex;
+  position: relative;
+}
+.comment_wrapper .icon_message{
+  display: inline-flex;
+}
+.comment_wrapper{
+  display: flex;
+  width: 85%;
+  margin: 20px auto;
+}
+.comment_outer{
+  text-align: left;
+  max-width: 50%;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+.name_wrapper{
+  font-weight: bold;
+}
+.user_messages::before{
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 50%;
+  border-radius: 50%;
+  background-color: #aaa;
+  right: 20px;
 }
 .user_messages:hover{
   background-color: #eee;
   color: #000;
+}
+.user_messages:hover::before{
+  background-color: #222;
 }
 .icon_message{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
+  min-width: 50px;
   font-size: 1.5rem;
   color: #fff;
   border-radius: 50%;
@@ -567,6 +578,16 @@ input[type=number] {
   padding: 1rem 3rem;
   border-radius: 5px;
 }
+.active_chat{
+  background-color: #dfdfdf;
+  color: #333;
+}
+.active_chat::before{
+  background-color: #ff3000;
+}
+.active_chat:hover::before{
+  background-color: #ff3000;
+}
 .input_wrapper_messages{
   padding: 1rem;
   background-color: #fff;
@@ -586,4 +607,62 @@ input[type=number] {
   border: none;
   background-color: #fff;
   font-size: 1.3rem;
+}
+@media only screen and (max-width: 580px){
+  .private_one{
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 1000px){
+  .profile_image_wrapper{
+    left: 50%;
+    transform: translate(-50%,-25%);
+  }
+  .community_content{
+    width: 100%;
+  }
+  .m_top_200{
+    margin-top: 200px;
+  }
+  .personal_info_wrapper{
+    margin-top: 0 !important;
+    margin-bottom: 30px;
+  }
+  .sidebar{
+    position: sticky !important;
+    z-index: 100;
+    padding: 10px 0 !important;
+    background-color: #fff;
+    top: 100px;
+  }
+  .content{
+    font-size: 15px !important;
+  }
+  .messages_content,.messages_sidebar_right{
+    flex: 0 0 100% ;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  .messages_sidebar_left{
+    flex: 0 0 100% ;
+  }
+  .message_inner_wrapper{
+    overflow: hidden;
+  }
+  .messages_content.back_to_view{
+    transform: translateX(-100%) !important;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .message_inner{
+    background-color: #fff;
+  }
+  .messages_sidebar_right.back_to_view{
+    transform: translateX(-200%) !important;
+  }
+}
+.more_communities .sidebar{
+  position: sticky;
+  top: 100px;
 }

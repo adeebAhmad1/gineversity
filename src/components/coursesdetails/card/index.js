@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
+import Videocard from '../videocard';
+import Rating from "../../ebooks/rating"
 import {Link} from 'react-router-dom';
-import Model from '../model';
 
 export default class extends React.Component {
     render() {
@@ -16,6 +17,7 @@ export default class extends React.Component {
                 Learn how to design fixed-wing drones from specific missions.<br/>
                 Explore Tradeoffs in aircraft design and performance.
                 </span>
+                <p><Rating stars={3.4}></Rating></p>
                 <div className={"btninline d-flex mb-3 align-items-center"}>
                     <Link to={"/mypurchases"} className={"btn btn-outline-danger btncourseBuy"}>
                        <span className={"fa fa-shopping-cart mr-6"}></span> Add to My Purchase
@@ -31,8 +33,8 @@ export default class extends React.Component {
                 <span className={"coursedetails-right-p d-block pl-2 pb-2"}><span className="fa fa-bookmark mr-4"></span> Certificate of completion</span>
                 <span className={"coursedetails-right-p d-block pl-2 pb-2"}><span className="fa fa-language mr-4"></span> English</span>
             </div>
-        <Model></Model>
         </div>
+        <Videocard/>
         <div className={"coursedetails-bottom d-flex" }>
            <div className={"coursedetails-learn d-flex"}>
         <div className={"d-flex flex-column justify-content-center"}>

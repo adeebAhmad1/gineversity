@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
+import ProfilesettingPage from '../pages/profilesettingPage';
 import LoginPage from '../pages/loginPage';
 import SignupPage from '../pages/signupPage';
 import CommunityPage from '../pages/communityPage';
@@ -8,6 +9,7 @@ import WatchcoursePage from '../pages/watchcoursePage';
 import WatchplacePage from '../pages/watchplacePage';
 import MoreCommunityPage from '../pages/morecommunitiesPage';
 import GroupsPage from '../pages/groupsPage';
+import AddbooksPage from '../pages/addbooksPage';
 import AddcoursePage from '../pages/addcoursePage';
 import TopicPage from '../pages/topicPage';
 import CoursePage from '../pages/coursePage';
@@ -18,9 +20,15 @@ import MyPurchasesPage from '../pages/mypurchasesPage';
 import Profile from '../components/Profile';
 import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
+import Profilebooks from '../components/profilebooks';
+import Comments from '../components/Comments';
 export function Routes() {
     return <div>
+        <Comments />
         <Switch>
+        <Route exact path='/addbooks' component={AddbooksPage} />
+        <Route exact path='/profilesetting' component={ProfilesettingPage} />
+        <Route exact path='/myebooks' component={Profilebooks} />
         <Route exact path='/community' component={CommunityPage} />
         <Route exact path='/credits' component={CreditsPage} />
         <Route exact path='/watchcourses' component={WatchcoursePage} />

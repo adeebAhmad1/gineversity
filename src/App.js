@@ -21,6 +21,7 @@ class App extends Component {
         {!isLoading && !isError && Routes()}
         {isError && !isLoading && Auth && <Error />}
         {isLoading && <Loader />}
+        {/* <Routes /> */}
       </React.Fragment>
     );
   }

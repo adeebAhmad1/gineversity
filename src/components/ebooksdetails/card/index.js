@@ -1,5 +1,5 @@
 import React from 'react';
-import Rating from '../rating';
+import Rating from '../../ebooks/rating';
 import './styles.css';
 import {Link} from 'react-router-dom';
 import Model from '../model';
@@ -19,7 +19,7 @@ export default class extends React.Component {
                 {"by " + this.props.writer}
                 </span>
                 <div className="mb-3 d-flex flex-row justify-content-between align-items-center" style={{ padding: "0px 5px" }}>
-                    <Rating stars={this.props.star} ></Rating>
+                    <Rating stars={5} ></Rating>
                 </div>
                 <div className={"btninline d-flex mb-3"}>
                     <Link to={"/mypurchases"} className={"btn btn-outline-danger mr-3 btnBuy"}>

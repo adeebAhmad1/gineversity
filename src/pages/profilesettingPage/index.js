@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/nav';
-import Community from '../../components/morecommunities';
+import ProfileSetting from '../../components/profilesetting/index';
 import Footer from '../../components/footer';
 import { connect } from 'react-redux';
 
@@ -9,9 +9,9 @@ class index extends Component {
     render() {
         const { Auth, profile } = this.props;
         return (
-            <div className="p-0 more_communities" style={{ minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
+            <div className="p-0" style={{overflow: "hidden", minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
                 <Navbar active={1} />
-                <Community auth={Auth} profile={profile} />
+                <ProfileSetting auth={Auth} profile={profile} />
                 <Footer/>
             </div>
         )

@@ -5,6 +5,17 @@ import Message from './Message';
 import Header from "../nav"
 import { Link } from 'react-router-dom';
 class Messages extends Component {
+  state={
+    width: window.innerWidth
+  }
+  onClick= (e)=>{
+    const target = e.target.dataset.target || e.target.parentNode.dataset.target || e.target.parentNode.parentNode.dataset.target
+    const state = e.target.dataset.state || e.target.parentNode.dataset.state || e.target.parentNode.parentNode.dataset.state
+    this.refs[target].classList[state]("back_to_view")
+  }
+  componentDidMount(){
+    window.addEventListener("resize",()=> this.setState({width: window.innerWidth}))
+  }
   render() {
     return (
       <div>
@@ -18,28 +29,30 @@ class Messages extends Component {
                 <input type="search" placeholder="Search Conversation" />
               </div>
               <div className="users_list">
-              <UserMessage active={true} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="45mins" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1s" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="25d" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1hour" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="22 hours" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} active={true} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="45mins" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1s" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="25d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1hour" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="22 hours" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
               </div>
               </div>
             </div>
-            <div className="messages_content">
+            <div className="messages_content" ref="msg_container">
+              <div className="messages_inner">
               <div className="top_bar_message">
-                <div className="reciver">
+                {this.state.width <= 1000 ? <i class="fa fa-arrow-left" data-target="msg_container" data-state="remove" style={{position: `absolute`,top: "50px",left: "20px"}} onClick={this.onClick} aria-hidden="true"></i> : ""}
+                <div className="reciver" data-state="add" data-target="profile_container" onClick={this.onClick}>
                 <div className="icon_message">
                   H
                 </div>
@@ -74,9 +87,11 @@ class Messages extends Component {
                 <input type="text"/>
                 <button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
               </div>
+              </div>
             </div>
-            <div className="messages_sidebar_right">
+            <div className="messages_sidebar_right" ref="profile_container">
             <div className="message_sidebar_inner">
+            {this.state.width <= 1000 ? <i class="fa fa-arrow-left"  data-target="profile_container" onClick={this.onClick} data-state="remove" style={{position: `absolute`,top: "20px",left: "20px"}} aria-hidden="true"></i> : ""}
             <div className="reciver_details">
               <div className="icon">H</div>
                 <div className="active_name">

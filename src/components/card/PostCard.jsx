@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PostCard = (item) => {
   return (
@@ -15,14 +16,14 @@ const PostCard = (item) => {
             justifyContent: "center",
           }}
         >
-          <h4 style={{ fontWeight: "700", color: "white", marginTop: "3px" }}>
+          <Link to="/otherprofile" style={{ fontWeight: "700", color: "white", marginTop: "3px" }}>
             {item.postedBy && item.postedBy.name ? item.postedBy.name[0] : ""}
-          </h4>
+          </Link>
         </div>
         <div className="post-user-detail">
-          <div className="post-name" style={{display: `inline`}}>
+          <Link to="/otherprofile" className="post-name" style={{display: `inline`}}>
             {item.postedBy ? item.postedBy.name : ""}
-          </div>
+          </Link>
           <div class="align-items-center" style={{display: "inline-flex"}}><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">Computers</div></div>
           <div className="post-sub-name">
             12:35AM
@@ -40,7 +41,7 @@ const PostCard = (item) => {
       <div className="post-body">
         {item.feed && <p className="post-body-detail">{item.feed}</p>}
         
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSky6u4ARSU9V-SdIC4__iA_GQjpiaQBVTNxIxPWiWJl8C_ysEp&usqp=CAU" alt="post" className="post-body-img" />
+          {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSky6u4ARSU9V-SdIC4__iA_GQjpiaQBVTNxIxPWiWJl8C_ysEp&usqp=CAU" alt="post" className="post-body-img" /> */}
         
       </div>
       <div className="post-footer">
@@ -49,11 +50,11 @@ const PostCard = (item) => {
           <span className="fa fa-check-square-o post-icon"></span>
           <span className="post-icon-text">Approve</span>
         </h6>
-        <h6 className="post-icons">
+        <a href="#comments" style={{textDecoration: `none` ,color: `#555`}} className="post-icons">
           {" "}
           <span className="fa fa-comments post-icon"></span>
           <span className="post-icon-text">Comment</span>
-        </h6>
+        </a>
         <h6 className="post-icons">
           {" "}
           <span className="fa fa-share-square post-icon"></span>

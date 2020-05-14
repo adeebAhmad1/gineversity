@@ -7,7 +7,8 @@ const CourseCard = (props) => {
   console.log(props)
   return (
     <div className="card_outer" style={{ display: `inline-block`,position: `relative` }}>
-      <div
+      <Link
+        to="/coursedetails"
         className={Style2.card + " course"}
         key={Math.random()}
         style={{ height: `max-content !important` }}
@@ -28,7 +29,7 @@ const CourseCard = (props) => {
           </Link>
           <h6 className="tag mt-2">${Math.ceil(Math.random()*100)}</h6>
         </div>
-      </div>
+      </Link>
       <div className="course_details_wrapper" style={props.style}>
         <div className="course_details">
           <p>Last Updated 5/20/20</p>

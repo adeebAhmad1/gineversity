@@ -431,7 +431,7 @@ input[type=number] {
   font-size: 1.3rem;
   color: #aaa;
 }
-.comments_wrapper::-webkit-scrollbar-track,
+
 .message_sidebar_inner::-webkit-scrollbar-track
 ,.messages::-webkit-scrollbar-track
 {
@@ -440,7 +440,7 @@ input[type=number] {
   background-color: transparent;
 }
 
-.comments_wrapper::-webkit-scrollbar,
+
 .message_sidebar_inner::-webkit-scrollbar
 ,.messages::-webkit-scrollbar
 {
@@ -449,7 +449,6 @@ input[type=number] {
 	background-color: transparent;
 }
 
-.comments_wrapper::-webkit-scrollbar-thumb,
 .message_sidebar_inner::-webkit-scrollbar-thumb
 ,.messages::-webkit-scrollbar-thumb
 {
@@ -477,22 +476,6 @@ input[type=number] {
   transition: all 0.3s;
   display: flex;
   position: relative;
-}
-.comment_wrapper .icon_message{
-  display: inline-flex;
-}
-.comment_wrapper{
-  display: flex;
-  width: 85%;
-  margin: 20px auto;
-}
-.comment_outer{
-  text-align: left;
-  max-width: 50%;
-  margin-left: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #ddd;
 }
 .name_wrapper{
   font-weight: bold;

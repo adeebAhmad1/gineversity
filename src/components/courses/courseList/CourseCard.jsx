@@ -35,7 +35,7 @@ const CourseCard = (props) => {
           <p>Last Updated 5/20/20</p>
           <h2>Hello</h2>
           <p><span style={{color: `#2998aa`}}>Web Development</span> | Development</p>
-          <p style={{fontSize: `0.8rem`}}> <i class="fa fa-play" aria-hidden="true"></i> 404 Lectures | <i class="fa fa-clock-o" aria-hidden="true"></i> 47 hours | <i class="fa fa-sliders" aria-hidden="true"></i> All levels</p>
+          <p style={{fontSize: `0.8rem`}}> <i className="fa fa-play" aria-hidden="true"></i> 404 Lectures | <i className="fa fa-clock-o" aria-hidden="true"></i> 47 hours | <i className="fa fa-sliders" aria-hidden="true"></i> All levels</p>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam magnam
           earum corrupti fuga.</p>
           <ul style={{color: `#999`}}>

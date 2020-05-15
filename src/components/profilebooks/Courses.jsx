@@ -101,7 +101,7 @@ class Courses extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6">
           <a href="#popup" className="course add_course" style={{height: "390px" , border: `4px dashed`}}>
               <div className="">
-                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                <i className="fa fa-plus-square" aria-hidden="true"></i>
                 <div className="text_add">Add E-Book</div>
               </div>
             </a>

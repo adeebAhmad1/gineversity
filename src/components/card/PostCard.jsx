@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Comment from "./Comment";
 
 const PostCard = (item) => {
   return (
@@ -24,7 +25,7 @@ const PostCard = (item) => {
           <Link to="/otherprofile" className="post-name" style={{display: `inline`}}>
             {item.postedBy ? item.postedBy.name : ""}
           </Link>
-          <div class="align-items-center" style={{display: "inline-flex"}}><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">Computers</div></div>
+          <div className="align-items-center" style={{display: "inline-flex"}}><div className="post-option"><span className="fa fa-caret-right post-head-icon"></span></div><div className="post-group-ref">Computers</div></div>
           <div className="post-sub-name">
             12:35AM
           </div>
@@ -60,6 +61,12 @@ const PostCard = (item) => {
           <span className="fa fa-share-square post-icon"></span>
           <span className="post-icon-text">Share</span>
         </h6>
+      </div>
+      <div className="comment_section">
+        <div className="comments_wrapper">
+          <Comment name="Hello World" comment="Hello World How are You?????"/>
+        </div>
+
       </div>
     </div>
   );

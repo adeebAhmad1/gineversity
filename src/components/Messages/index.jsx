@@ -26,7 +26,7 @@ class Messages extends Component {
             <div className="messages_sidebar_left">
               <div className="message_sidebar_inner">
               <div className="input_wrapper">
-                <i class="fa fa-search"></i>
+                <i className="fa fa-search"></i>
                 <input type="search" placeholder="Search Conversation" />
               </div>
               <div className="users_list">
@@ -52,7 +52,7 @@ class Messages extends Component {
             <div className="messages_content" ref="msg_container">
               <div className="messages_inner">
               <div className="top_bar_message">
-                {this.state.width <= 1000 ? <i class="fa fa-arrow-left" data-target="msg_container" data-state="remove" style={{position: `absolute`,top: "50px",left: "20px"}} onClick={this.onClick} aria-hidden="true"></i> : ""}
+                {this.state.width <= 1000 ? <i className="fa fa-arrow-left" data-target="msg_container" data-state="remove" style={{position: `absolute`,top: "50px",left: "20px"}} onClick={this.onClick} aria-hidden="true"></i> : ""}
                 <div className="reciver" data-state="add" data-target="profile_container" onClick={this.onClick}>
                 <div className="icon_message">
                   H
@@ -62,7 +62,7 @@ class Messages extends Component {
                 </div>
                 </div>
                 <div className="icon_right">
-                  <i class="fa fa-ellipsis-v"></i>
+                  <i className="fa fa-ellipsis-v"></i>
                 </div>
               </div>
               <div className="messages">
@@ -84,15 +84,15 @@ class Messages extends Component {
                 <Message className="outgoing" message="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum praesentium, quas aut ullam blanditiis similique commodi! Id perspiciatis minus eum error, delectus ducimus, placeat quas nam modi, odit laborum veniam?"/>
               </div>
               <div className="input_wrapper_messages">
-                <button><i class="fa fa-paperclip" aria-hidden="true"></i></button>
+                <button><i className="fa fa-paperclip" aria-hidden="true"></i></button>
                 <input type="text"/>
-                <button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                <button><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
               </div>
               </div>
             </div>
             <div className="messages_sidebar_right" ref="profile_container">
             <div className="message_sidebar_inner">
-            {this.state.width <= 1000 ? <i class="fa fa-arrow-left"  data-target="profile_container" onClick={this.onClick} data-state="remove" style={{position: `absolute`,top: "20px",left: "20px"}} aria-hidden="true"></i> : ""}
+            {this.state.width <= 1000 ? <i className="fa fa-arrow-left"  data-target="profile_container" onClick={this.onClick} data-state="remove" style={{position: `absolute`,top: "20px",left: "20px"}} aria-hidden="true"></i> : ""}
             <div className="reciver_details">
               <div className="icon">H</div>
                 <div className="active_name">

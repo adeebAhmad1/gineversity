@@ -5,8 +5,8 @@ class index extends Component {
     render() {
         const { list } = this.props;
         if (list && list.length > 0) {
-            return list.map(item => {
-                return <PostCard {...item} />
+            return list.map((item,i) => {
+                return <PostCard key={i} {...item} />
 
 
             });

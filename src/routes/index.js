@@ -21,10 +21,8 @@ import Profile from '../components/Profile';
 import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
-import Comments from '../components/Comments';
 export function Routes() {
     return <div>
-        <Comments />
         <Switch>
         <Route exact path='/addbooks' component={AddbooksPage} />
         <Route exact path='/profilesetting' component={ProfilesettingPage} />

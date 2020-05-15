@@ -248,7 +248,7 @@ class index extends Component {
                     <div className="icon_message">H</div>
                     Hello World
                     <i
-                      class="fa fa-chevron-right"
+                      className="fa fa-chevron-right"
                       style={{
                         position: `absolute`,
                         bottom: "10px",
@@ -375,7 +375,7 @@ class index extends Component {
                     <div className="icon_message">H</div>
                     Hello World
                     <i
-                      class="fa fa-chevron-right"
+                      className="fa fa-chevron-right"
                       style={{
                         position: `absolute`,
                         bottom: "10px",
@@ -496,7 +496,7 @@ class index extends Component {
                   <div className="icon_message">H</div>
                   Hello World
                   <i
-                    class="fa fa-chevron-right"
+                    className="fa fa-chevron-right"
                     style={{
                       position: `absolute`,
                       bottom: "10px",

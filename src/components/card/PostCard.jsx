@@ -65,7 +65,15 @@ const PostCard = (item) => {
       </div>
       <div className="comment_section">
         <div className="comments_wrapper">
-          <Comment name="Hello World" comment="Hello World How are You?????" isReply={false} />
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
+          <Comment name="Hello World" isReply={false}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quibusdam aut dignissimos, commodi nostrum nemo consequuntur itaque earum ut dolorum</Comment>
         </div>
         <InputComment placeholder="Write a Comment" />
       </div>

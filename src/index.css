@@ -261,6 +261,17 @@ button{
  .addcoursebtn{
   width: 80%    
   }
+
+  .comment_wrapper{
+    max-width: 70% !important;
+    font-size: 0.8rem;
+  }
+  .comment_input_wrapper input{
+    font-size: 0.8rem;
+  }
+  .comment_input_wrapper button{
+    font-size: 1rem;
+  }
 }
 @media (max-width: 900px){
   .popup__box{

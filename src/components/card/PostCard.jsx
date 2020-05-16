@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Comment from "./Comment";
+import InputComment from "./InputComment";
 
 const PostCard = (item) => {
   return (
@@ -51,11 +52,11 @@ const PostCard = (item) => {
           <span className="fa fa-check-square-o post-icon"></span>
           <span className="post-icon-text">Approve</span>
         </h6>
-        <a href="#comments" style={{textDecoration: `none` ,color: `#555`}} className="post-icons">
+        <h6 className="post-icons">
           {" "}
           <span className="fa fa-comments post-icon"></span>
           <span className="post-icon-text">Comment</span>
-        </a>
+        </h6>
         <h6 className="post-icons">
           {" "}
           <span className="fa fa-share-square post-icon"></span>
@@ -64,9 +65,9 @@ const PostCard = (item) => {
       </div>
       <div className="comment_section">
         <div className="comments_wrapper">
-          <Comment name="Hello World" comment="Hello World How are You?????"/>
+          <Comment name="Hello World" comment="Hello World How are You?????" isReply={false} />
         </div>
-
+        <InputComment placeholder="Write a Comment" />
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const logoNameMob = {
   color: "#c0392b",
   fontFamily: `'Montserrat', sans-serif`,
 };
-const navbar = { position: `sticky`, top: 0, zIndex: 5000 };
+const navbar = { position: `sticky`, top: 0, zIndex: 1000 };
 class index extends Component {
   constructor(props) {
     super(props);

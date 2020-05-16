@@ -1,4 +1,13 @@
-
+.books-model-both{
+  display: flex
+}
+.books-model-left{
+  flex: 0 0 40%;
+  padding: 1rem 1rem 0 0
+}
+.books-model-right{
+  flex: 0 0 60%
+}
 .popup__right {
   width: 100%;
   display: flex;

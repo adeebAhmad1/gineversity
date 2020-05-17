@@ -261,7 +261,9 @@ button{
  .addcoursebtn{
   width: 80%    
   }
-
+.add_content_wrapper *{
+  font-size: 0.7rem !important;
+}
   .comment_wrapper{
     max-width: 70% !important;
     font-size: 0.8rem;
@@ -749,4 +751,73 @@ input[type=number] {
 }
 .comment_section{
   padding-bottom: 10px;
+}
+.add_content .content{
+  flex-wrap: wrap;
+}
+.add_content .content_inner{
+  justify-content: space-evenly;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.add_content_wrapper,.input_content_wrapper{
+  width: 100%;
+}
+.chapter_wrapper{
+  display: block;
+  width: 100%;
+}
+.input_content_wrapper input,.input_content_wrapper textarea{
+  width: 70%;
+  resize: none;
+  padding: 10px 15px;
+}
+.input_content_wrapper label{
+  width: 30%;
+  vertical-align: top;
+}
+.dropdown_items_wrapper{
+  width: 100%;
+}
+.dropdown_items_wrapper ol{
+  border: 1px solid #ff3300;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+.dropdown_item,.dropdown_item li{
+  width: 100%;
+  position: relative;
+  cursor: default;
+}
+.dropdown_button{
+  padding: 15px 30px 25px;
+}
+.nested_dropdown_item{
+  /* background-color: #ff5600; */
+  padding: 15px 50px 25px;
+  /* color: #fff; */
+  border: 1px solid #ff9999;
+  border-left: none;
+  border-right: none;
+}
+.buttons_div{
+  float: right;
+}
+.add_buttons{
+  background-color: #ddd;
+  border: none;
+  border-radius: 100rem;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  display: inline-flex;justify-content: center;align-items: center;
+}
+.add_btn{
+  background-color: #ddd;
+  border: none;
+  border-radius: 100rem;
+  padding: 5px 15px;
+  margin: 10px;
 }

@@ -81,7 +81,7 @@ class PrivateInfo extends Component {
               </a>
             </div>
             <div style={{ textAlign: "center" }}>
-              <Link to="/" className="btn btn-outline-danger addcoursebtn btnStyle">Submit for Preview</Link>
+              <Link to="/addcontent" className="btn btn-outline-danger addcoursebtn btnStyle">Submit for Preview</Link>
             </div>
           </form>
         </div>

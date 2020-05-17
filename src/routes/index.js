@@ -21,10 +21,12 @@ import Profile from '../components/Profile';
 import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
+import AddContent from '../components/addcourse/AddContent';
 export function Routes() {
     return <div>
         <Switch>
         <Route exact path='/addbooks' component={AddbooksPage} />
+        <Route exact path='/addcontent' component={AddContent} />
         <Route exact path='/profilesetting' component={ProfilesettingPage} />
         <Route exact path='/myebooks' component={Profilebooks} />
         <Route exact path='/community' component={CommunityPage} />

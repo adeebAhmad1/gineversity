@@ -41,7 +41,7 @@ class index extends Component {
   }
 
   renderActiveLink() {
-    var { active } = this.props;
+    var { active ,profile} = this.props;
     return (
       <React.Fragment>
         <Link
@@ -128,6 +128,7 @@ class index extends Component {
       </React.Fragment>
     );
   }
+
   renderMobActiveLink() {
     var { active } = this.props;
     return (
@@ -245,8 +246,8 @@ class index extends Component {
                     style={{ fontWeight: `bold`, position: `relative` }}
                     className="dropdown-item"
                   >
-                    <div className="icon_message">H</div>
-                    Hello World
+                    <div className="icon_message">{profile.name ? profile.name[0]: ''}</div>
+                    {profile.name}
                     <i
                       className="fa fa-chevron-right"
                       style={{
@@ -372,8 +373,8 @@ class index extends Component {
                     style={{ fontWeight: `bold`, position: `relative` }}
                     className="dropdown-item"
                   >
-                    <div className="icon_message">H</div>
-                    Hello World
+                    <div className="icon_message">{profile.name ? profile.name[0] : ''}</div>
+                    {profile.name}
                     <i
                       className="fa fa-chevron-right"
                       style={{

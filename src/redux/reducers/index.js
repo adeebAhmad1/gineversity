@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { loginReducer, registerReducer, CurrentUser, userProfile } from './userReducer';
 import { topicReducer } from './topicReducer';
-import { registerFeedReducer, feedReducer } from './feedReducer';
+import { registerFeedReducer, feedReducer, feedIReducer } from './feedReducer';
 
 export default combineReducers({
     Login: loginReducer,
@@ -10,5 +10,6 @@ export default combineReducers({
     Topics: topicReducer,
     Profile: userProfile,
     RegFeed : registerFeedReducer,
-    Feed : feedReducer
+    Feed : feedReducer,
+    FeedS: feedIReducer
 });

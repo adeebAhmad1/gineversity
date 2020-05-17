@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense, Fragment } from 'react';
 import './style.css';
 import { connect } from 'react-redux';
-import { registerFeeds, getFeeds } from '../../redux/actions/feedActions';
+import { registerFeeds, getFeeds, getFeedsAuth } from '../../redux/actions/feedActions';
 import { Link } from 'react-router-dom';
 import List from './courseList';
 import Model from './model'
@@ -13,8 +13,15 @@ class index extends Component {
     }
 
     componentDidMount() {
-        const { getFeeds } = this.props;
-            getFeeds(0, 0);
+        const { profile, getFeeds, getFeedsAuth } = this.props;
+        var data;
+        if (profile && profile._id) {
+            data = { limit: 0, _id: profile._id };
+            getFeedsAuth(data, 0);
+        } else {
+            data = { limit: 0 };
+            getFeeds(data, 0);
+        }
     }
 
     submit(data) {
@@ -121,5 +128,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { registerFeeds, getFeeds})(index);
+export default connect(mapStateToProps, { registerFeeds, getFeeds, getFeedsAuth })(index);
 

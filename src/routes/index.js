@@ -21,16 +21,15 @@ import Profile from '../components/Profile';
 import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
-import CommunityPageT from '../pages/communityPageT';
-
+import AddContent from '../components/addcourse/AddContent';
 export function Routes() {
     return <div>
         <Switch>
         <Route exact path='/addbooks' component={AddbooksPage} />
+        <Route exact path='/addcontent' component={AddContent} />
         <Route exact path='/profilesetting' component={ProfilesettingPage} />
         <Route exact path='/myebooks' component={Profilebooks} />
-        <Route exact path='/' component={CommunityPage} />
-        <Route exact path='/community/:tId' component={CommunityPageT} />
+        <Route exact path='/community' component={CommunityPage} />
         <Route exact path='/credits' component={CreditsPage} />
         <Route exact path='/watchcourses' component={WatchcoursePage} />
         <Route exact path='/watchplace' component={WatchplacePage} />
@@ -49,7 +48,7 @@ export function Routes() {
         <Route path='/ebooks' component={EBookPage}/>
         <Route path='/ebookdetails' component={ebookdetailsPage}/>
         <Route path='/mypurchases' component={MyPurchasesPage}/>
-        <Route render={() => <Redirect to='/' />} />
+        <Route render={() => <Redirect to='/community' />} />
     </Switch>
     </div>
 }

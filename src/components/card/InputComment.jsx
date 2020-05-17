@@ -1,10 +1,10 @@
 import React from "react";
 
-const InputComment = (props) => {
+const InputComment = ({placeholder}) => {
   return (
     <div className="comment_input_wrapper">
-      <input type="text" placeholder={props.placeholder} />
-      <button className="fa fa-paper-plane" onClick={e => props.onhandleComment(e)}></button>
+      <input type="text" placeholder={placeholder} />
+      <button className="fa fa-paper-plane"></button>
     </div>
   );
 };

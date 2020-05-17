@@ -21,11 +21,14 @@ class AddContent extends Component {
                 </div>
               </div>
             </div>
-            <div className="input_content_wrapper">
+            <div className="price_wrapper input_content_wrapper">
               <p>
                 <label htmlFor="price">Set Price: </label>
                 <input id="price" type="text" placeholder="Price" />
               </p>
+            </div>
+            <div className="input_content_wrapper">
+              
               <p>
                 <label htmlFor="title">Title: </label>
                 <input id="title" type="text" placeholder="Title" />

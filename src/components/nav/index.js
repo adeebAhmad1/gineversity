@@ -192,8 +192,8 @@ class index extends Component {
     const { isActive } = this.state;
     const { Auth, isError, profile } = this.props;
     return (
-      <div className="navbar d-flex flex-column col-12  p-lg-3 p-md-2 p-sm-1" style={navbar}>
-        <div className="d-flex flex-row justify-content-between align-items-center col-12  p-lg-3 p-md-2 p-sm-1">
+      <div className="navbar d-flex flex-column col-12 p-3 p-lg-3 p-md-3 p-sm-3 pl-0 pr-0" style={navbar}>
+        <div className="d-flex flex-row justify-content-between align-items-center col-12 p-0">
           <Link to="/" style={logoNameMob}>
             GENIVERSITY
           </Link>
@@ -205,11 +205,10 @@ class index extends Component {
           </button>
         </div>
         {isActive && (
-          <div className="input-group col-lg-3 col-12 p-lg-3 p-md-2 p-sm-1">
+          <div className="input-group col-lg-3 col-12 p-3 p-lg-3 p-md-3 p-sm-3">
             <input
               type="text"
-              className="form-control" 
-              style={{minWidth: `80%`}}
+              className="form-control"
               placeholder="Search Geniversity"
             />
             <div className="input-group-append">
@@ -302,7 +301,7 @@ class index extends Component {
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
                   <Link to="/inbox"
-                    className="fa fa-bell link-nav p-3"
+                    className="fa fa-bell link-nav p-3 p-lg-3 p-md-3 p-sm-3"
                     style={{ fontSize: "20px" }}
                   ></Link>
                 )}
@@ -317,8 +316,8 @@ class index extends Component {
     const { isActive } = this.state;
     const { Auth, isError, profile } = this.props;
     return (
-      <div className="navbar d-flex flex-column col-12 p-lg-3 p-md-2 p-sm-1" style={navbar}>
-        <div className="d-flex flex-row justify-content-between align-items-center col-12  p-lg-3 p-md-2 p-sm-1">
+      <div className="navbar d-flex flex-column col-12 p-3 p-lg-3 p-md-3 p-sm-3 pl-0 pr-0" style={navbar}>
+        <div className="d-flex flex-row justify-content-between align-items-center col-12 p-0">
           <Link to="/" style={logoNameMob}>
             GENIVERSITY
           </Link>
@@ -330,11 +329,10 @@ class index extends Component {
           </button>
         </div>
         {isActive && (
-          <div className="input-group col-lg-3 col-12  p-lg-3 p-md-2 p-sm-1">
+          <div className="input-group col-lg-3 col-12 p-3 p-lg-3 p-md-3 p-sm-3">
             <input
               type="text"
-              className="form-control" 
-              style={{minWidth: `80%`}}
+              className="form-control"
               placeholder="Search Geniversity"
             />
             <div className="input-group-append">
@@ -430,7 +428,7 @@ class index extends Component {
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
                   <Link  to="/inbox"
-                    className="fa fa-bell link-nav p-3"
+                    className="fa fa-bell link-nav p-3 p-lg-3 p-md-3 p-sm-3"
                     style={{ fontSize: "20px" }}
                   ></Link>
                 )}
@@ -454,8 +452,7 @@ class index extends Component {
           <div className="input-group col-lg-3 col-12">
             <input
               type="text"
-              className="form-control" 
-              style={{minWidth: `80%`}}
+              className="form-control"
               placeholder="Search Geniversity"
             />
             <div className="input-group-append">

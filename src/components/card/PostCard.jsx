@@ -10,14 +10,13 @@ import { useEffect } from "react";
 const PostCard = (props) => {
   const { item, addComments, profile } = props;
   const [list, setList] = useState([]), [tempId, setTid] = useState(1);
-  const [see ,setSee] = useState(false)
+
   useEffect(() => {
     setList(item.comments ? item.comments : []);
   }, [item, setList]);
 
   function renderList(list) {
-    const myList = see ? list : list.slice(0,2)
-    return myList && myList.length > 0 && myList.map(i => {
+    return list && list.length > 0 && list.map(i => {
       return <Comment key={i._id} name={i.postedBy && i.postedBy.name ? i.postedBy.name : ' '} replyList={i.replies} isReply={false}>
         {i.comment}
       </Comment>
@@ -39,7 +38,7 @@ const PostCard = (props) => {
   }
 
   return (
-    <div key={item._id} className="post col-md-12">
+    <div className="post col-md-12">
       <div className="post-head">
         <div
           style={{
@@ -53,16 +52,16 @@ const PostCard = (props) => {
           }}
         >
           <Link to="/otherprofile" style={{ fontWeight: "700", color: "white", marginTop: "3px" }}>
-            {item.postedBy && item.postedBy.name ? item.postedBy.name[0] : ""}
+            {item && item.postedBy && item.postedBy.name ? item.postedBy.name[0] : ""}
           </Link>
         </div>
         <div className="post-user-detail">
           <Link to="/otherprofile" className="post-name" style={{ display: `inline` }}>
-            {item.postedBy ? item.postedBy.name : ""}
+            {item && item.postedBy ? item.postedBy.name : ""}
           </Link>
-          <div className="align-items-center" style={{ display: "inline-flex" }}><div className="post-option"><span className="fa fa-caret-right post-head-icon"></span></div><div className="post-group-ref">{item.topicId ? item.topicId.name : ''}</div></div>
+          <div class="align-items-center" style={{ display: "inline-flex" }}><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">{item && item.topicId ? item.topicId.name : ''}</div></div>
           <div className="post-sub-name">
-            {item.posted ? item.posted : ''}
+            {item && item.posted ? item.posted : ''}
           </div>
         </div>
         <div className="post-buttons ml-auto">
@@ -75,8 +74,8 @@ const PostCard = (props) => {
         </div>
       </div>
       <div className="post-body">
-        {item.feed && <p className="post-body-detail">{item.feed}</p>}
-        {item.url && <img src={item.url} alt="post" className="post-body-img" />}
+        {item && item.feed && <p className="post-body-detail">{item.feed}</p>}
+        {item && item.url && <img src={item.url} alt="post" className="post-body-img" />}
       </div>
       <div className="post-footer">
         <h6 className="post-icons">
@@ -96,7 +95,6 @@ const PostCard = (props) => {
         </h6>
       </div>
       <div className="comment_section">
-        {list.length > 2 && !see ? <div className="see_all"><button onClick={()=>setSee(true)}>See All</button></div> : "" }
         <div className="comments_wrapper">
           {renderList(list)}
         </div>

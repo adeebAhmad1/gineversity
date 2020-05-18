@@ -8,7 +8,8 @@ export default class extends React.Component {
     render() {
         return <div>
         <div className={"coursedetails d-flex" }>
-         
+
+     {window.innerWidth < 1000 ?     
             <div className={"coursedetails-center justify-content-center d-flex flex-column"}>
            <span className={"m-0 p-0"} style={{fontSize: "30px", fontWeight: "bold"}}>
                 Introduction to Fixed-Wing Drone Design
@@ -24,8 +25,21 @@ export default class extends React.Component {
                      </Link>
                    <p style={{fontSize: "30px", margin: "0"}}>$45.99</p>
                 </div>
-                
             </div>
+            : 
+            <div className={"coursedetails-center justify-content-center d-flex flex-column"}>
+            <span className={"m-0 p-0"} style={{fontSize: "30px", fontWeight: "bold"}}>
+                 Introduction to Fixed-Wing Drone Design
+                 </span>
+                 <span className={"mb-4 mt-4"} style={{fontSize: "20px"}}>
+                 Learn how to design fixed-wing drones from specific missions.<br/>
+                 Explore Tradeoffs in aircraft design and performance.
+                 </span>
+             </div>
+            }
+
+
+
             <div className={"coursedetails-right d-flex flex-column justify-content-center"}>
             <h3 className={"coursedetails-instructor-heading pb-4"}>This Course Includes:</h3>    
                         <span className={"coursedetails-right-p d-block pl-2 pb-2"}><span className="fa fa-television mr-4"></span>2 Hours on Demand Video</span>
@@ -34,7 +48,6 @@ export default class extends React.Component {
                 <span className={"coursedetails-right-p d-block pl-2 pb-2"}><span className="fa fa-language mr-4"></span> English</span>
             </div>
         </div>
-        <Videocard/>
         <div className={"coursedetails-bottom d-flex" }>
            <div className={"coursedetails-learn d-flex"}>
         <div className={"d-flex flex-column justify-content-center"}>
@@ -59,6 +72,7 @@ export default class extends React.Component {
         </div>
         </div>
         </div>
+        <Videocard/>
             
         </div>
     }

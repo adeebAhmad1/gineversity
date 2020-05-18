@@ -48,7 +48,8 @@ class index extends Component {
     render() {
         const { auth, profile, Feed, TopicList } = this.props;
 
-        return <div className="content">
+        return <div className="groups_page">
+<div className="content">
             <Model />
             <nav className="sidebar ">
                 <div style={{ position: `sticky`, top: `100px` }}>
@@ -181,6 +182,7 @@ class index extends Component {
             </div> : ""}
             {/* /////////////////// normal view end  /////////////////////////////////////// */}
 
+        </div>
         </div>
     }
 }

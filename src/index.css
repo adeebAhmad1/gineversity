@@ -261,7 +261,9 @@ button{
  .addcoursebtn{
   width: 80%    
   }
-
+  .groups_page .sidebar{
+overflow: hidden;
+  }
   .comment_wrapper{
     max-width: 70% !important;
     font-size: 0.8rem;
@@ -627,13 +629,13 @@ input[type=number] {
     margin-top: 0 !important;
     margin-bottom: 30px;
   }
-  .sidebar{
+  /* .sidebar{
     position: sticky !important;
     z-index: 100;
     padding: 10px 0 !important;
     background-color: #fff;
     top: 100px;
-  }
+  } */
   .content{
     font-size: 15px !important;
   }
@@ -660,6 +662,10 @@ input[type=number] {
   .messages_sidebar_right.back_to_view{
     transform: translateX(-200%) !important;
   }
+  .more_communities .sidebar{
+    position: static !important;
+    /* top: 100px; */
+  }
 }
 .more_communities .sidebar{
   position: sticky;
@@ -670,6 +676,10 @@ input[type=number] {
 }
 .my_card{
   height: 420px !important;
+}
+
+.sidebar{
+  border-right: 1px solid #ccc
 }
 .add_ebook{
   display: flex;align-items: center;justify-content: center;
@@ -757,7 +767,6 @@ input[type=number] {
   display: block;
   text-align: left;
   padding: 10px;
-
 }
 .see_all button:hover{
   background-color: rgba(170, 170, 170, 0.2);

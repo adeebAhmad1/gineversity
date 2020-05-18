@@ -750,3 +750,15 @@ input[type=number] {
 .comment_section{
   padding-bottom: 10px;
 }
+.see_all button{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 10px;
+
+}
+.see_all button:hover{
+  background-color: rgba(170, 170, 170, 0.2);
+}

@@ -10,13 +10,14 @@ import { useEffect } from "react";
 const PostCard = (props) => {
   const { item, addComments, profile } = props;
   const [list, setList] = useState([]), [tempId, setTid] = useState(1);
-
+  const [see ,setSee] = useState(false)
   useEffect(() => {
     setList(item.comments ? item.comments : []);
   }, [item, setList]);
 
   function renderList(list) {
-    return list && list.length > 0 && list.map(i => {
+    const myList = see ? list : list.slice(0,2)
+    return myList && myList.length > 0 && myList.map(i => {
       return <Comment key={i._id} name={i.postedBy && i.postedBy.name ? i.postedBy.name : ' '} replyList={i.replies} isReply={false}>
         {i.comment}
       </Comment>
@@ -59,7 +60,7 @@ const PostCard = (props) => {
           <Link to="/otherprofile" className="post-name" style={{ display: `inline` }}>
             {item.postedBy ? item.postedBy.name : ""}
           </Link>
-          <div class="align-items-center" style={{ display: "inline-flex" }}><div class="post-option"><span class="fa fa-caret-right post-head-icon"></span></div><div class="post-group-ref">{item.topicId ? item.topicId.name : ''}</div></div>
+          <div className="align-items-center" style={{ display: "inline-flex" }}><div className="post-option"><span className="fa fa-caret-right post-head-icon"></span></div><div className="post-group-ref">{item.topicId ? item.topicId.name : ''}</div></div>
           <div className="post-sub-name">
             {item.posted ? item.posted : ''}
           </div>
@@ -95,6 +96,7 @@ const PostCard = (props) => {
         </h6>
       </div>
       <div className="comment_section">
+        {list.length > 2 && !see ? <div className="see_all"><button onClick={()=>setSee(true)}>See All</button></div> : "" }
         <div className="comments_wrapper">
           {renderList(list)}
         </div>

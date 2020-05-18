@@ -21,34 +21,43 @@ import Profile from '../components/Profile';
 import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
-import AddContent from '../components/addcourse/AddContent';
+import CommunityPageT from '../pages/communityPageT';
+
 export function Routes() {
     return <div>
         <Switch>
-        <Route exact path='/addbooks' component={AddbooksPage} />
-        <Route exact path='/addcontent' component={AddContent} />
-        <Route exact path='/profilesetting' component={ProfilesettingPage} />
-        <Route exact path='/myebooks' component={Profilebooks} />
-        <Route exact path='/community' component={CommunityPage} />
-        <Route exact path='/credits' component={CreditsPage} />
-        <Route exact path='/watchcourses' component={WatchcoursePage} />
-        <Route exact path='/watchplace' component={WatchplacePage} />
-        <Route exact path='/mycourses' component={MyCourses} />
-        <Route exact path='/groups' component={GroupsPage} />
-        <Route exact path='/addcourse' component={AddcoursePage} />
-        <Route exact path='/morecommunities' component={MoreCommunityPage} />
-        <Route path='/login' component={LoginPage} />
-        <Route path='/inbox' component={Messages} />
-        <Route path='/register' component={SignupPage} />
-        <Route path='/user/:id/topics' component={TopicPage} />
-        <Route path='/courses' component={CoursePage}/>
-        <Route path='/coursedetails' component={CourseDetailsPage}/>
-        <Route path='/profile' component={()=><Profile ismyProfile={true} />}/>
-        <Route path='/otherprofile' component={()=><Profile ismyProfile={false} />}/>
-        <Route path='/ebooks' component={EBookPage}/>
-        <Route path='/ebookdetails' component={ebookdetailsPage}/>
-        <Route path='/mypurchases' component={MyPurchasesPage}/>
-        <Route render={() => <Redirect to='/community' />} />
-    </Switch>
+            <Route exact path='/addbooks' component={AddbooksPage} />
+            <Route exact path='/profilesetting' component={ProfilesettingPage} />
+            <Route exact path='/myebooks' component={Profilebooks} />
+            <Route exact path='/' component={CommunityPage} />
+            <Route exact path='/community/:tId' component={CommunityPageT} />
+            <Route exact path='/credits' component={CreditsPage} />
+            <Route exact path='/watchcourses' component={WatchcoursePage} />
+            <Route exact path='/watchplace' component={WatchplacePage} />
+            <Route exact path='/mycourses' component={MyCourses} />
+            <Route exact path='/groups' component={GroupsPage} />
+            <Route exact path='/addcourse' component={AddcoursePage} />
+            <Route exact path='/morecommunities' component={MoreCommunityPage} />
+            <Route path='/inbox' component={Messages} />
+            <Route path='/register' component={SignupPage} />
+            <Route path='/user/:id/topics' component={TopicPage} />
+            <Route path='/courses' component={CoursePage} />
+            <Route path='/coursedetails' component={CourseDetailsPage} />
+            <Route path='/profile' component={() => <Profile ismyProfile={true} />} />
+            <Route path='/otherprofile' component={() => <Profile ismyProfile={false} />} />
+            <Route path='/ebooks' component={EBookPage} />
+            <Route path='/ebookdetails' component={ebookdetailsPage} />
+            <Route path='/mypurchases' component={MyPurchasesPage} />
+            <Route render={() => <Redirect to='/' />} />
+        </Switch>
+    </div>
+}
+
+export function PublicRoutes() {
+    return <div>
+        <Switch>
+            <Route exact path='/login' component={LoginPage} />
+            <Route render={() => <Redirect to='/login' />} />
+        </Switch>
     </div>
 }

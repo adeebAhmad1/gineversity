@@ -4,6 +4,7 @@ import Avat from "../../assets/img_avatar.png";
 import { logOut } from "../../redux/actions/userActions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+
 const logoName = {
   fontSize: "18px",
   textDecoration: "none",
@@ -11,6 +12,7 @@ const logoName = {
   color: "#c0392b",
   fontFamily: `'Montserrat', sans-serif`,
 };
+
 const logoNameMob = {
   fontSize: "20px",
   textDecoration: "none",
@@ -18,13 +20,17 @@ const logoNameMob = {
   color: "#c0392b",
   fontFamily: `'Montserrat', sans-serif`,
 };
+
 const navbar = { position: `sticky`, top: 0, zIndex: 1000 };
+
 class index extends Component {
+
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0 };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+
   state = { width: null, height: null, isActive: false };
 
   componentDidMount() {
@@ -41,7 +47,7 @@ class index extends Component {
   }
 
   renderActiveLink() {
-    var { active } = this.props;
+    var { active ,profile} = this.props;
     return (
       <React.Fragment>
         <Link
@@ -128,6 +134,7 @@ class index extends Component {
       </React.Fragment>
     );
   }
+
   renderMobActiveLink() {
     var { active } = this.props;
     return (
@@ -245,8 +252,8 @@ class index extends Component {
                     style={{ fontWeight: `bold`, position: `relative` }}
                     className="dropdown-item"
                   >
-                    <div className="icon_message">H</div>
-                    Hello World
+                    <div className="icon_message">{profile.name ? profile.name[0]: ''}</div>
+                    {profile.name}
                     <i
                       className="fa fa-chevron-right"
                       style={{
@@ -372,8 +379,8 @@ class index extends Component {
                     style={{ fontWeight: `bold`, position: `relative` }}
                     className="dropdown-item"
                   >
-                    <div className="icon_message">H</div>
-                    Hello World
+                    <div className="icon_message">{profile.name ? profile.name[0] : ''}</div>
+                    {profile.name}
                     <i
                       className="fa fa-chevron-right"
                       style={{

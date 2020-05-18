@@ -9,9 +9,7 @@ class PrivateInfo extends Component {
           <div className="popup__right">
             <h3 style={{ fontSize: "22px", color: "#fff" }}>Course Details</h3>
           </div>
-
           <form className="col-lg-12 col-md-12 col-12 login-card">
-
             <div style={{ marginBottom: "1.5rem", fontSize: "14px" }}>
               <label className="label">What Student Learn from your course?</label>
               <div className="input-group" style={{ marginTop: '12px' }}>

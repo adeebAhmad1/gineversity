@@ -22,7 +22,7 @@ import MyCourses from '../components/MyCourses';
 import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
 import CommunityPageT from '../pages/communityPageT';
-
+import AddContent from "../components/addcourse/AddContent"
 export function Routes() {
     return <div>
         <Switch>
@@ -37,6 +37,7 @@ export function Routes() {
             <Route exact path='/mycourses' component={MyCourses} />
             <Route exact path='/groups' component={GroupsPage} />
             <Route exact path='/addcourse' component={AddcoursePage} />
+            <Route exact path='/addcontent' component={AddContent} />
             <Route exact path='/morecommunities' component={MoreCommunityPage} />
             <Route path='/inbox' component={Messages} />
             <Route path='/register' component={SignupPage} />

@@ -192,7 +192,7 @@ class index extends Component {
     const { isActive } = this.state;
     const { Auth, isError, profile } = this.props;
     return (
-      <div className="navbar d-flex flex-column col-12 p-3 p-lg-3 p-md-3 p-sm-3 pl-0 pr-0" style={navbar}>
+      <div className="navbar d-flex flex-column col-12" style={navbar}>
         <div className="d-flex flex-row justify-content-between align-items-center col-12 p-0">
           <Link to="/" style={logoNameMob}>
             GENIVERSITY
@@ -316,8 +316,8 @@ class index extends Component {
     const { isActive } = this.state;
     const { Auth, isError, profile } = this.props;
     return (
-      <div className="navbar d-flex flex-column col-12 p-3 p-lg-3 p-md-3 p-sm-3 pl-0 pr-0" style={navbar}>
-        <div className="d-flex flex-row justify-content-between align-items-center col-12 p-0">
+      <div className="navbar d-flex flex-column col-12" style={navbar}>
+        <div className="d-flex flex-row justify-content-between align-items-center col-12">
           <Link to="/" style={logoNameMob}>
             GENIVERSITY
           </Link>

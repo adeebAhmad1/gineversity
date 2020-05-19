@@ -15,10 +15,22 @@ body {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
   }
+  .add_content_wrapper,.price_wrapper{
+    width: 100% !important;
+  }
+  .dropdown_button,.nested_dropdown_item{
+    padding: 10px 2px !important;
+  }
+  .dropdown_items_wrapper ol{
+    width: 100%;
+  }
+  .content_inner{
+    flex-direction: column;
+  }
   .pagination_profile{
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
     margin-right: 0 !important;
-    padding: 5px !important;
+    padding: 4px !important;
   }
   .content{
     font-size: 13px !important;
@@ -28,7 +40,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+@media only screen and (max-width:400px){
+  .dropdown_button,.nested_dropdown_item{
+    font-size: 0.7rem;
+  }
+  .add_buttons{
+    width: 25px !important;
+    height: 25px !important;
+  }
+}
 button{
   outline: none !important;
   box-shadow: none !important;
@@ -775,3 +795,85 @@ input[type=number] {
 .see_all button:hover{
   background-color: rgba(170, 170, 170, 0.2);
 }
+
+.add_content .content{
+  flex-wrap: wrap;
+}
+.add_content{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.add_content .content_inner{
+  justify-content: space-between;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.input_content_wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+.price_wrapper,
+.add_content_wrapper{
+  margin: 0 auto;
+  width: 45%;
+}
+.chapter_wrapper{
+  display: block;
+  width: 100%;
+}
+.input_content_wrapper input,.input_content_wrapper textarea{
+  width: 70%;
+  resize: none;
+  padding: 10px 15px;
+}
+.input_content_wrapper label{
+  width: 30%;
+  vertical-align: top;
+}
+.dropdown_items_wrapper{
+  width: 100%;
+}
+.dropdown_items_wrapper ol{
+  
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+.dropdown_item,.dropdown_item>li{
+  width: 100%;
+  position: relative;
+  border: 1px solid #aaa;
+  cursor: default;
+  border-radius: 10px;
+}
+.dropdown_button{
+  padding: 15px 30px 25px;
+}
+.nested_dropdown_item{
+  background-color: #eee;
+  padding: 15px 50px 25px;
+  /* color: #fff; */
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+}
+.buttons_div{
+  float: right;
+}
+.add_buttons{
+  background-color: #ddd;
+  border: none;
+  border-radius: 100rem;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  display: inline-flex;justify-content: center;align-items: center;
+}
+.add_btn{
+  background-color: #ddd;
+  border: none;
+  border-radius: 100rem;
+  padding: 5px 15px;
+  margin: 10px;
+}
+

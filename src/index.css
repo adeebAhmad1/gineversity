@@ -906,7 +906,7 @@ input[type="number"] {
   width: 350px;
   height: 50vh;
   position: absolute;
-  background-color: #eee;
+  background-color: #fff;
   right: 0;
   top: 100%;
   transform: translateX(-50%);

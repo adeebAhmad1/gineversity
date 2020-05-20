@@ -6,17 +6,17 @@ class Notifications extends Component {
     return (
       <div className="notifications_wrapper">
         <h2>Notifications</h2>
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
+        <Notification isActive={true}  />
+        <Notification isActive={false} />
+        <Notification isActive={true}  />
+        <Notification isActive={false} />
+        <Notification isActive={true}  />
+        <Notification isActive={false} />
+        <Notification isActive={true}  />
+        <Notification isActive={false} />
+        <Notification isActive={true}  />
+        <Notification isActive={false} />
+        <Notification isActive={true}  />
       </div>
     );
   }

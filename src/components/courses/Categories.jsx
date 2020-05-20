@@ -62,13 +62,21 @@ class Categories extends Component {
       </div>
     );
     return (
-      <div>
+      <div className="col-12 categories">
         <div className="container-fluid">
-          <h1> {heading} </h1>
-          <div className="row">
+          <div className="col-12">
+          <h1 className="col-lg-12 col-12 heading-primary" style={{fontWeight: 700}}> {heading} </h1>
+          </div>
+          <div className="col-12">
+          <div className="col-12">
+            <div className="container-fluid">
+            <div className="row">
             {leftDom}
             {this.renderCourses(list)}
             {rightDom}
+          </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>

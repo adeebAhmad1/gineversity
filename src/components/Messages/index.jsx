@@ -102,7 +102,7 @@ class Messages extends Component {
                 </div>
               </div>
               <h4>Personal Info</h4>
-              <ListItems />
+              <ListItems profile={{country:"Pakistan",phone: "+92 300 000 0000",email: "noreply@email.com"}} />
               <Link to="/profile" className="profile_btn">View Profile</Link>
             </div>
             </div>

@@ -922,3 +922,13 @@ input[type="number"] {
 .user_messages:hover{
   text-decoration: none;
 }
+.categories .card{
+  height: 180px !important;
+}
+.categories .card-img-overlay{
+  position: static !important;
+}
+.categories .card-img-overlay h6{
+  margin-top: 0 !important;
+  color: #222;
+}

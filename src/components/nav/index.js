@@ -311,11 +311,10 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <i onClick={()=>this.setState({notification: !this.state.notification})}
-                  className="fa fa-bell link-nav"
-                  id="notification"
-                  style={{ fontSize: "20px" }}
-                ></i>
+                 <div>
+                 <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px",margin: `0 20px` }}></i>
+                 <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
+               </div>
                 )}
               </div>
             )}
@@ -442,11 +441,10 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <i onClick={()=>this.setState({notification: !this.state.notification})}
-                  className="fa fa-bell link-nav"
-                  id="notification"
-                  style={{ fontSize: "20px" }}
-                ></i>
+                  <div>
+                    <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
+                    <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
+                  </div>
                 )}
               </div>
             )}
@@ -482,11 +480,10 @@ class index extends Component {
             </div>
           </div>
           {this.renderActiveLink()}
-          <i onClick={()=>this.setState({notification: !this.state.notification})}
-            className="fa fa-bell link-nav"
-            id="notification"
-            style={{ fontSize: "20px" }}
-          ></i>
+          <div>
+                    <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
+                    <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
+                  </div>
           {!Auth || isError ? (
             <Link className="btn-login-nav col-lg-1 col-12 p-1" to="login">
               Login

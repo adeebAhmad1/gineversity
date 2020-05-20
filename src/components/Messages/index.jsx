@@ -18,6 +18,8 @@ class Messages extends Component {
     window.addEventListener("resize",()=> this.setState({width: window.innerWidth}))
   }
   render() {
+    const message1 = "HELLO WORLD!How ARE YOU???"
+    const message2 = "I'm Fine and You?"
     return (
       <div>
         <Header />
@@ -30,22 +32,22 @@ class Messages extends Component {
                 <input type="search" placeholder="Search Conversation" />
               </div>
               <div className="users_list">
-              <UserMessage onClick={this.onClick} active={true} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="45mins" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1s" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="25d" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1hour" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="22 hours" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message="HELLO WORLD!How ARE YOU???" />
-              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message="I'm Fine and You?" />
+              <UserMessage onClick={this.onClick} active={true} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="45mins" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1s" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="25d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1hour" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="22 hours" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="1d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
+              <UserMessage onClick={this.onClick} name="Hello World" time="2d" message={message1.length > 10 ? message1.slice(0,10)+"..." : message1} />
               </div>
               </div>
             </div>

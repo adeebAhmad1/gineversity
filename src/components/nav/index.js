@@ -4,6 +4,7 @@ import Avat from "../../assets/img_avatar.png";
 import { logOut } from "../../redux/actions/userActions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Notifications from "./Notifications";
 
 const logoName = {
   fontSize: "18px",
@@ -31,11 +32,19 @@ class index extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  state = { width: null, height: null, isActive: false };
+  state = { 
+    width: null,
+    height: null,
+    isActive: false,
+    notification: false
+  };
 
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
+    window.addEventListener("click",(e)=>{
+      if(e.target.id !== "notification") this.setState({notification: false})
+    })
   }
 
   componentWillUnmount() {
@@ -302,15 +311,17 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <Link to="/inbox"
-                    className="fa fa-bell link-nav p-3 p-lg-3 p-md-3 p-sm-3"
-                    style={{ fontSize: "20px" }}
-                  ></Link>
+                  <i onClick={()=>this.setState({notification: !this.state.notification})}
+                  className="fa fa-bell link-nav"
+                  id="notification"
+                  style={{ fontSize: "20px" }}
+                ></i>
                 )}
               </div>
             )}
           </React.Fragment>
         )}
+        {this.state.notification ? <Notifications /> : ""}
       </div>
     );
   }
@@ -356,7 +367,7 @@ class index extends Component {
                 Login
               </Link>
             ) : (
-              <div className="col-12 d-flex flex-row justify-content-center align-items-center">
+              <div className="col-12 d-flex flex-row justify-content-between align-items-center">
                 <img
                   src={profile.image ? profile.img : Avat}
                   alt="profile"
@@ -431,15 +442,17 @@ class index extends Component {
                 </div>
                 {isActive && <div className="m-2"></div>}
                 {isActive && (
-                  <Link  to="/inbox"
-                    className="fa fa-bell link-nav p-3 p-lg-3 p-md-3 p-sm-3"
-                    style={{ fontSize: "20px" }}
-                  ></Link>
+                  <i onClick={()=>this.setState({notification: !this.state.notification})}
+                  className="fa fa-bell link-nav"
+                  id="notification"
+                  style={{ fontSize: "20px" }}
+                ></i>
                 )}
               </div>
             )}
           </React.Fragment>
         )}
+        {this.state.notification ? <Notifications /> : ""}
       </div>
     );
   }
@@ -469,10 +482,11 @@ class index extends Component {
             </div>
           </div>
           {this.renderActiveLink()}
-          <Link to="/inbox"
+          <i onClick={()=>this.setState({notification: !this.state.notification})}
             className="fa fa-bell link-nav"
+            id="notification"
             style={{ fontSize: "20px" }}
-          ></Link>
+          ></i>
           {!Auth || isError ? (
             <Link className="btn-login-nav col-lg-1 col-12 p-1" to="login">
               Login
@@ -554,6 +568,7 @@ class index extends Component {
               </div>
             </div>
           )}
+          {this.state.notification ? <Notifications /> : ""}
         </div>
       );
     else if (width && width !== 0 && width <= 600)

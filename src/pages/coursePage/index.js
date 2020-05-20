@@ -3,7 +3,7 @@ import Navbar from '../../components/nav';
 import { connect } from 'react-redux';
 import Header from '../../components/courses/header';
 import Courses from '../../components/courses/courseList';
-import Categories from '../../components/courses/topCategories';
+// import Categories from '../../components/courses/topCategories';
 import RecomendedCategories from '../../components/courses/Categories';
 import Footer from '../../components/footer';
 
@@ -16,7 +16,7 @@ class index extends Component {
                 <Header />
                 {TopicList && TopicList.length > 0 && titles.map(el=> <Courses list={TopicList.slice(0, TopicList.length > 5 ? 5 : TopicList.length)} title={el} />)}
                 {TopicList && TopicList.length > 0 && <RecomendedCategories heading="All Categories" list={[...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList]} />}
-                {TopicList && TopicList.length > 0 && <Categories heading="Intrested Courses" list={TopicList.slice(0, TopicList.length > 6 ? 6 : TopicList.length)} />}
+                {TopicList && TopicList.length > 0 && <Courses title="Intrested Courses" list={TopicList.slice(0, TopicList.length > 5 ? 5 : TopicList.length)}  />}
                 <Footer/>
                 </div>
     }

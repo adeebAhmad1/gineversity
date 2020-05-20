@@ -9,7 +9,7 @@ class Categories extends Component {
   renderCourses=(list) => {
     const myList = list.slice(this.state.index,this.state.index + this.state.cards);
     return myList.map((el,i) => {
-      return <div className="col-lg-2"><Card name={el.name} image={el.image} _id={i}  /></div>
+      return <div className="col-lg-2 col-md-3 col-sm-4"><Card name={el.name} image={el.image} _id={i}  /></div>
     })
   }
   render() {

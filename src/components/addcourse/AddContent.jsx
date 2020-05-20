@@ -56,7 +56,7 @@ class AddContent extends Component {
           </ol>
           </div>
           <div style={{ textAlign: "center",width: `100%` }}>
-              <Link to="/addcontent" className="btn btn-outline-danger addcoursebtn btnStyle">Submit for Preview</Link>
+              <Link to="/addcontent" className="btn btn-outline-danger addcoursebtn btnStyle">Submit</Link>
             </div>
         </div>
         <Footer />

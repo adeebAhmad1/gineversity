@@ -13,7 +13,7 @@ export default class extends React.Component {
                 <div className={"wdisc"}>Lorem Ipsum is a good guy. Get away due to Corona oh tera nana.</div>
                    </div>
                 <div className={"wright"}>
-                <span className={"wtitle"}>220/500 Pages Read</span>
+                <span className={"wtitle mb-3"}>500 Total Pages</span>
                 <Link to="/" className={"wbtn btn btn-outline-danger"}>Start Reading</Link>
                 </div>
         </div>

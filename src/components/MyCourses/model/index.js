@@ -44,7 +44,7 @@ class index extends Component {
                             <option value="audi">Health</option>
                         </select>
 
-                        <label className="label">Add Description:</label>
+                        <label className="label">Short Description:</label>
                         <div className="input-group mb-3 description-text" style={{ marginTop: '12px' }}>
                             <textarea id="detail" style={{ resize: "none" }} className="form-control inputStyle" name="detail" rows="1" cols="50" required>
                             </textarea>

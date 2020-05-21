@@ -38,7 +38,7 @@ export default class index extends Component {
     renderCourses=(list) => {
         const myList = list.slice(this.state.index,this.state.index + this.state.cards);
         return myList.map((el,i) => {
-            return <CourseCard el={el} index={i} style={myList.length -1 === i ? {right: "100%"} : {left:`100%`}}  after={myList.length -1 === i ? {left: 0} : {right: 0}} />
+            return <div className="category_card"><CourseCard el={el} index={i} style={myList.length -1 === i ? {right: "100%"} : {left:`100%`}}  after={myList.length -1 === i ? {left: 0} : {right: 0}} /></div>
         })
     }
     render() {

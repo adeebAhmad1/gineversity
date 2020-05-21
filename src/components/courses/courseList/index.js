@@ -6,7 +6,7 @@ import CourseCard from './CourseCard';
 
 const styleActive = { color: '#c23616', borderBottom: '6px solid #c23616', fontWeight: '600', fontSize: '18px', padding: '16px 20px 16px 20px', marginBottom: '0px', cursor: 'pointer' };
 const simpleStyle = { color: '#718093', fontWeight: '600', fontSize: '18px', padding: '16px 20px 16px 20px', marginBottom: '0px', cursor: 'pointer' };
-var dummy = ["Hello", "Adeeb", "Ahmad", "Ismail", "Zeeshan", "Waseem","Vely"];
+var dummy = [1,2,3,4,5,6,7,8,9,0];
 export default class index extends Component {
     state = {
         index: 0,
@@ -36,7 +36,7 @@ export default class index extends Component {
     renderCourses=(list) => {
         const myList = list.slice(this.state.index,this.state.index + this.state.cards);
         return myList.map((el,i) => {
-            return <CourseCard el={el} index={i} style={myList.length -1 === i ? {right: "100%"} : {left:`100%`}}  after={myList.length -1 === i ? {left: 0} : {right: 0}} />
+            return <CourseCard index={i} style={myList.length -1 === i ? {right: "100%"} : {left:`100%`}}  after={myList.length -1 === i ? {left: 0} : {right: 0}} />
         })
     }
     render() {

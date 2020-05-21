@@ -1,28 +1,20 @@
 import React, { Component } from "react";
-import Card from "../card";
+import { Link } from "react-router-dom"
 import Styles from '../ebooks/ebookList/styles.module.css';
 class Categories extends Component {
   state = {
     index: 0,
-    cards: 6,
-    width: window.innerWidth
+    cards: 6
   }
   renderCourses = (list) => {
     const myList = list.slice(this.state.index, this.state.index + this.state.cards);
     return myList.map((el, i) => {
-      return <div className="col-lg-2 col-md-3 col-sm-4 col-6"><Card name={el.name} courses={true} link={this.props.link} image={el.image} _id={i} /></div>
+      return <Link to="/ebookscategories" className="col-lg-2 col-md-3 col-sm-4 p-1" >
+     <div style={{ padding:"1rem 0",border: "1px solid rgba(0,0,0,0.2)",boxShadow: "0 .2rem .5rem rgba(0,0,0,0.3)", marginBottom: "2rem"}}>
+      <h6 style={{ marginLeft: "1rem", color: "rgba(0,0,0,0.7)"}}>{el.name}</h6>
+      </div>
+      </Link>
     })
-  }
-  componentDidMount() {
-    window.onresize = this.onResize;
-    this.onResize()
-  }
-  onResize = ()=>{
-    this.setState({width: window.innerWidth});
-    if(window.innerWidth <= 992) this.setState({cards: 4})
-    if(window.innerWidth <= 768) this.setState({cards: 3})
-    if(window.innerWidth <= 576) this.setState({cards: 2})
-    if(window.innerWidth <= 300) this.setState({cards: 1})
   }
   render() {
     const { list, heading } = this.props;
@@ -30,7 +22,7 @@ class Categories extends Component {
       this.state.index > 0 ? (
         <div
           className={Styles.leftWrapper}
-          style={{ position: "absolute", top: "50%", left: 0, zIndex: 100 }}
+          style={{ position: "absolute", top: "15%", left: 0, zIndex: 100 }}
         >
           <button
             className={Styles.btnNav}
@@ -50,7 +42,7 @@ class Categories extends Component {
         className={Styles.rightWrapper}
         style={{
           position: "absolute",
-          top: "50%",
+          top: "15%",
           width: "50px",
           background: "transparent",
           right: 0,
@@ -81,15 +73,13 @@ class Categories extends Component {
           </div>
           <div className="col-12">
             <div className="col-12">
-                  {leftDom}
               <div className="container-fluid">
                 <div className="row">
-                  <div className="row">
+                  {leftDom}
                   {this.renderCourses(list)}
-                  </div>
+                  {rightDom}
                 </div>
               </div>
-                  {rightDom}
             </div>
           </div>
         </div>

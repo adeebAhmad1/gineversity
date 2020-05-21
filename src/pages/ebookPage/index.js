@@ -3,7 +3,7 @@ import Navbar from '../../components/nav';
 import { connect } from 'react-redux';
 import Header from '../../components/ebooks/header';
 import EBooks from '../../components/ebooks/ebookList';
-import Categories from '../../components/courses/Categories';
+import Categories from '../../components/ebooks/Categories';
 import Footer from '../../components/footer';
 class index extends Component { 
     render() {
@@ -84,7 +84,7 @@ class index extends Component {
                 <Navbar active={3} />
                 <Header />
                 {TopicList && TopicList.length > 0 && titles.map(title=><EBooks title={title} bookList = {topRIM}/>)}
-                <Categories list={[...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList]} heading="Genres" />
+                <Categories link="ebookscategories" list={[...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList,...TopicList]} heading="Genres" />
                 <Footer></Footer>
              </div>
     }

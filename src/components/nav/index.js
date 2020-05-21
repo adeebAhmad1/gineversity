@@ -32,7 +32,7 @@ class index extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  state = { 
+  state = {
     width: null,
     height: null,
     isActive: false,
@@ -42,8 +42,8 @@ class index extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
-    window.addEventListener("click",(e)=>{
-      if(e.target.id !== "notification") this.setState({notification: false})
+    window.addEventListener("click", (e) => {
+      if (e.target.id !== "notification") this.setState({ notification: false })
     })
   }
 
@@ -56,7 +56,7 @@ class index extends Component {
   }
 
   renderActiveLink() {
-    var { active ,profile} = this.props;
+    var { active, profile } = this.props;
     return (
       <React.Fragment>
         <Link
@@ -239,85 +239,86 @@ class index extends Component {
                 Login
               </Link>
             ) : (
-              <div className="col-12 d-flex justify-content-center align-items-center">
-                <img
-                  src={profile.image ? profile.img : Avat}
-                  alt="profile"
-                  className="dropdown-toggle"
-                  id="dropdownMenu2"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    marginRight: "8px",
-                    borderRadius: "1000px",
-                  }}
-                />
-                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <Link
-                    to="/profile"
-                    style={{ fontWeight: `bold`, position: `relative` }}
-                    className="dropdown-item"
-                  >
-                    <div className="icon_message">{profile.name ? profile.name[0]: ''}</div>
-                    {profile.name}
-                    <i
-                      className="fa fa-chevron-right"
-                      style={{
-                        position: `absolute`,
-                        bottom: "10px",
-                        right: "20px",
-                      }}
-                      aria-hidden="true"
-                    ></i>
+                <div className="col-12 d-flex justify-content-center align-items-center">
+                  <img
+                    src={profile.image ? profile.img : Avat}
+                    alt="profile"
+                    className="dropdown-toggle"
+                    id="dropdownMenu2"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      marginRight: "8px",
+                      borderRadius: "1000px",
+                    }}
+                  />
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <Link
+                      to="/profile"
+                      style={{ fontWeight: `bold`, position: `relative` }}
+                      className="dropdown-item"
+                    >
+                      <div className="icon_message">{profile.name ? profile.name[0] : ''}</div>
+                      {profile.name}
+                      <i
+                        className="fa fa-chevron-right"
+                        style={{
+                          position: `absolute`,
+                          bottom: "10px",
+                          right: "20px",
+                        }}
+                        aria-hidden="true"
+                      ></i>
+                    </Link>
+                    <hr />
+                    <Link to="/watchcourses" className="dropdown-item">
+                      My Courses
                   </Link>
-                  <hr />
-                  <Link to="/watchcourses" className="dropdown-item">
-                    My Courses
+                    <Link to="/readebook" className="dropdown-item">
+                      My E-Books
                   </Link>
-                  <Link to="/mypurchases" className="dropdown-item">
-                    My E-Books
+                    <Link to="/morecommunities" className="dropdown-item">
+                      Communities
                   </Link>
-                  <Link to="/morecommunities" className="dropdown-item">
-                    Communities
+                    <Link to="/credits" className="dropdown-item">
+                      Gineversity Credits
                   </Link>
-                  <Link to="/credits" className="dropdown-item">
-                    Gineversity Credits
+                    <Link to="/profilesetting" className="dropdown-item">
+                      Settings
                   </Link>
-                  <Link to="/profilesetting" className="dropdown-item">
-                    Settings
+                    <Link to="/inbox" className="dropdown-item">
+                      Inbox
                   </Link>
-                  <button
-                    className="dropdown-item"
-                    onClick={(e) => this.props.logOut()}
-                  >
-                    Logout
+                    <button
+                      className="dropdown-item"
+                      onClick={(e) => this.props.logOut()}
+                    >
+                      Logout
                   </button>
-                  <hr />
-                  <Link to="/" className="dropdown-item">
-                    About Us
+                    <hr />
+                    <Link to="/" className="dropdown-item">
+                      About Us
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Contact Us
+                    <Link to="/" className="dropdown-item">
+                      Contact Us
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Terms &#38; Conditions
+                    <Link to="/" className="dropdown-item">
+                      Terms &#38; Conditions
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Privacy Policy
+                    <Link to="/" className="dropdown-item">
+                      Privacy Policy
                   </Link>
+                  </div>
+                  {isActive && (
+                    <div>
+                      <i onClick={() => this.setState({ notification: !this.state.notification })} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px", margin: `0 20px` }}></i>
+                    </div>
+                  )}
                 </div>
-                {isActive && <div className="m-2"></div>}
-                {isActive && (
-                 <div>
-                 <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px",margin: `0 20px` }}></i>
-                 <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
-               </div>
-                )}
-              </div>
-            )}
+              )}
           </React.Fragment>
         )}
         {this.state.notification ? <Notifications /> : ""}
@@ -366,88 +367,87 @@ class index extends Component {
                 Login
               </Link>
             ) : (
-              <div className="col-12 d-flex flex-row justify-content-between align-items-center">
-                <img
-                  src={profile.image ? profile.img : Avat}
-                  alt="profile"
-                  className="dropdown-toggle"
-                  id="dropdownMenu2"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    marginRight: "8px",
-                    borderRadius: "1000px",
-                  }}
-                />
-                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <Link to="/profile" className="dropdown-item">
-                    View Profile
+                <div className="col-12 d-flex flex-row justify-content-around align-items-center">
+                  <img
+                    src={profile.image ? profile.img : Avat}
+                    alt="profile"
+                    className="dropdown-toggle"
+                    id="dropdownMenu2"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      marginRight: "8px",
+                      borderRadius: "1000px",
+                    }}
+                  />
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <Link to="/profile" className="dropdown-item">
+                      View Profile
                   </Link>
-                  <Link
-                    to="/profile"
-                    style={{ fontWeight: `bold`, position: `relative` }}
-                    className="dropdown-item"
-                  >
-                    <div className="icon_message">{profile.name ? profile.name[0] : ''}</div>
-                    {profile.name}
-                    <i
-                      className="fa fa-chevron-right"
-                      style={{
-                        position: `absolute`,
-                        bottom: "10px",
-                        right: "20px",
-                      }}
-                      aria-hidden="true"
-                    ></i>
+                    <Link
+                      to="/profile"
+                      style={{ fontWeight: `bold`, position: `relative` }}
+                      className="dropdown-item"
+                    >
+                      <div className="icon_message">{profile.name ? profile.name[0] : ''}</div>
+                      {profile.name}
+                      <i
+                        className="fa fa-chevron-right"
+                        style={{
+                          position: `absolute`,
+                          bottom: "10px",
+                          right: "20px",
+                        }}
+                        aria-hidden="true"
+                      ></i>
+                    </Link>
+                    <hr />
+                    <Link to="/watchcourses" className="dropdown-item">
+                      My Courses
                   </Link>
-                  <hr />
-                  <Link to="/watchcourses" className="dropdown-item">
-                    My Courses
+                    <Link to="/readebook" className="dropdown-item">
+                      My E-Books
                   </Link>
-                  <Link to="/mypurchases" className="dropdown-item">
-                    My E-Books
+                    <Link to="/morecommunities" className="dropdown-item">
+                      Communities
                   </Link>
-                  <Link to="/morecommunities" className="dropdown-item">
-                   Communities
+                    <Link to="/credits" className="dropdown-item">
+                      Gineversity Credits
                   </Link>
-                  <Link to="/credits" className="dropdown-item">
-                    Gineversity Credits
+                    <Link to="/profilesetting" className="dropdown-item">
+                      Settings
                   </Link>
-                  <Link to="/profilesetting" className="dropdown-item">
-                    Settings
+                  <Link to="/inbox" className="dropdown-item">
+                      Inbox
                   </Link>
-                  <button
-                    className="dropdown-item"
-                    onClick={(e) => this.props.logOut()}
-                  >
-                    Logout
+                    <button
+                      className="dropdown-item"
+                      onClick={(e) => this.props.logOut()}
+                    >
+                      Logout
                   </button>
-                  <hr />
-                  <Link to="/" className="dropdown-item">
-                    About Us
+                    <hr />
+                    <Link to="/" className="dropdown-item">
+                      About Us
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Contact Us
+                    <Link to="/" className="dropdown-item">
+                      Contact Us
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Terms &#38; Conditions
+                    <Link to="/" className="dropdown-item">
+                      Terms &#38; Conditions
                   </Link>
-                  <Link to="/" className="dropdown-item">
-                    Privacy Policy
+                    <Link to="/" className="dropdown-item">
+                      Privacy Policy
                   </Link>
-                </div>
-                {isActive && <div className="m-2"></div>}
-                {isActive && (
-                  <div>
-                    <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
-                    <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
                   </div>
-                )}
-              </div>
-            )}
+                  {isActive && (
+                      <i onClick={() => this.setState({ notification: !this.state.notification })} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
+                  )}
+                </div>
+              )}
           </React.Fragment>
         )}
         {this.state.notification ? <Notifications /> : ""}
@@ -480,91 +480,91 @@ class index extends Component {
             </div>
           </div>
           {this.renderActiveLink()}
-          <div>
-                    <i onClick={()=>this.setState({notification: !this.state.notification})} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
-                    <Link to="/inbox" className="fa fa-comments-o link-nav" id="notification" style={{ fontSize: "20px" }}></Link>
-                  </div>
+            <i onClick={() => this.setState({ notification: !this.state.notification })} className="fa fa-bell link-nav" id="notification" style={{ fontSize: "20px" }}></i>
           {!Auth || isError ? (
             <Link className="btn-login-nav col-lg-1 col-12 p-1" to="login">
               Login
             </Link>
           ) : (
-            <div className="col-lg-1 col-12">
-              <img
-                src={profile.image ? profile.img : Avat}
-                alt="profile"
-                className="dropdown-toggle dropleft"
-                id="dropdownMenu2"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                style={{
-                  width: "40px",
-                  height: "40px",
-                  marginRight: "8px",
-                  borderRadius: "1000px",
-                }}
-              />
-              <div
-                className="dropdown-menu navbar_dropdown dropdown-menu-right"
-                style={{ width: `250px` }}
-                aria-labelledby="dropdownMenu2"
-              >
-                <Link
-                  to="/profile"
-                  style={{ fontWeight: `bold`, position: `relative` }}
-                  className="dropdown-item"
+              <div className="col-lg-1 col-12">
+                <img
+                  src={profile.image ? profile.img : Avat}
+                  alt="profile"
+                  className="dropdown-toggle dropleft"
+                  id="dropdownMenu2"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    marginRight: "8px",
+                    borderRadius: "1000px",
+                  }}
+                />
+                <div
+                  className="dropdown-menu navbar_dropdown dropdown-menu-right"
+                  style={{ width: `250px` }}
+                  aria-labelledby="dropdownMenu2"
                 >
-                  <div className="icon_message">H</div>
-                  Hello World
+                  <Link
+                    to="/profile"
+                    style={{ fontWeight: `bold`, position: `relative` }}
+                    className="dropdown-item"
+                  >
+                    <div className="icon_message">H</div>
+                    Hello World
                   <i
-                    className="fa fa-chevron-right"
-                    style={{
-                      position: `absolute`,
-                      bottom: "10px",
-                      right: "20px",
-                    }}
-                    aria-hidden="true"
-                  ></i>
+                      className="fa fa-chevron-right"
+                      style={{
+                        position: `absolute`,
+                        bottom: "10px",
+                        right: "20px",
+                      }}
+                      aria-hidden="true"
+                    ></i>
+                  </Link>
+                  <hr />
+                  <Link to="/watchcourses" className="dropdown-item">
+                    My Courses
                 </Link>
-                <hr />
-                <Link to="/watchcourses" className="dropdown-item">
-                  My Courses
+                  <Link to="/readebook" className="dropdown-item">
+                    My E-Books
                 </Link>
-                <Link to="/mypurchases" className="dropdown-item">
-                  My E-Books
+                  <Link to="/morecommunities" className="dropdown-item">
+                    Communities
                 </Link>
-                <Link to="/morecommunities" className="dropdown-item">
-                  Communities
+                  <Link to="/credits" className="dropdown-item">
+                    Gineversity Credits
                 </Link>
-                <Link to="/credits" className="dropdown-item">
-                  Gineversity Credits
+                  <Link to="/profilesetting" className="dropdown-item">
+                    Settings
                 </Link>
-                <Link to="/profilesetting" className="dropdown-item">
-                  Settings
-                </Link>
-                <button
-                  className="dropdown-item"
-                  onClick={(e) => this.props.logOut()}
-                >
-                  Logout
+                <Link to="/inbox" className="dropdown-item">
+                      Inbox
+                  </Link>
+                  <button
+                    className="dropdown-item"
+                    onClick={(e) => this.props.logOut()}
+                  >
+                    Logout
                 </button>
-                <hr />
-                <Link to="/" className="dropdown-item">
-                  About Us
+                  <hr />
+                  <Link to="/" className="dropdown-item">
+                    About Us
                 </Link>
-                <Link to="/" className="dropdown-item">
-                  Contact Us
+                  <Link to="/" className="dropdown-item">
+                    Contact Us
                 </Link>
-                <Link to="/" className="dropdown-item">
-                  Terms &#38; Conditions
+                  <Link to="/" className="dropdown-item">
+                    Terms &#38; Conditions
                 </Link>
-                <Link to="/" className="dropdown-item">
-                  Privacy Policy
+                  <Link to="/" className="dropdown-item">
+                    Privacy Policy
                 </Link>
+                </div>
               </div>
-            </div>
-          )}
+            )}
           {this.state.notification ? <Notifications /> : ""}
         </div>
       );

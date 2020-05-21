@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import '../style.css';
 import Styles from '../../ebooks/ebookList/styles.module.css';
-import { Link } from 'react-router-dom';
-import CourseCard from './CourseCard';
+import CourseCard from '../../courses/courseList/CourseCard';
 
 const styleActive = { color: '#c23616', borderBottom: '6px solid #c23616', fontWeight: '600', fontSize: '18px', padding: '16px 20px 16px 20px', marginBottom: '0px', cursor: 'pointer' };
 const simpleStyle = { color: '#718093', fontWeight: '600', fontSize: '18px', padding: '16px 20px 16px 20px', marginBottom: '0px', cursor: 'pointer' };
@@ -17,7 +16,10 @@ export default class index extends Component {
         const { list } = this.props;
         this.setState({ id: list[0]._id });
         window.onresize = this.onResize;
-        this.onResize()
+        if(window.innerWidth <= 1240) this.setState({cards: 4})
+        if(window.innerWidth <= 1010) this.setState({cards: 3})
+        if(window.innerWidth <= 780) this.setState({cards: 2})
+        if(window.innerWidth <= 540) this.setState({cards: 1})
     }
     onResize = ()=>{
         this.setState({width: window.innerWidth});

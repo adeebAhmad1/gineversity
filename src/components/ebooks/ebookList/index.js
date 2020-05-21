@@ -19,8 +19,7 @@ export default class index extends Component {
     renderEBooks(list) {
         var dummy = list || [];
         return dummy.map(i => {
-
-            return <Card {...i}></Card>
+            return <Card {...i}/>
         })
     }
 

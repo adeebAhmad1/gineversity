@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../nav";
 import Footer from "../footer";
-import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
 class AddContent extends Component {
   state = {
@@ -9,7 +8,7 @@ class AddContent extends Component {
     dropdownItems: [],
   };
   componentDidMount() {
-    const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const dropdownItems = items.map((el) => `Chapter ${el}`);
     this.setState({ dropdownItems });
   }
@@ -21,7 +20,11 @@ class AddContent extends Component {
           <div className="content_inner">
             <div
               className="add_content_wrapper"
-              style={{ textAlign: `center`, marginBottom: `50px` }}
+              style={{
+                textAlign: `center`,
+                marginBottom: `50px`,
+                width: "30%",
+              }}
             >
               <div
                 className="course add_course"
@@ -30,7 +33,7 @@ class AddContent extends Component {
                 <div className="">
                   <label htmlFor="coursefile">
                     <i className="fa fa-plus-square" aria-hidden="true"></i>{" "}
-                    <div className="text_add">Add Thumbnail</div>
+                    <div className="text_add">Add Cover Photo</div>
                   </label>
                   <input
                     type="file"
@@ -39,57 +42,48 @@ class AddContent extends Component {
                   />
                 </div>
               </div>
-              Size: 300 x 300
+              Size: 150 x 300
             </div>
             <div className="price_wrapper input_content_wrapper">
               <p>
                 <label htmlFor="title">Title: </label>
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
-                  value="My Title"
+                  value="Title"
                   readOnly
                   id="title"
                   type="text"
-                  placeholder="Price"
+                  placeholder="title"
                 />
               </p>
               <p>
-                <label htmlFor="category">Category: </label>
+                <label htmlFor="price">Genre: </label>
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="Computer"
                   readOnly
-                  id="category"
+                  id="price"
                   type="text"
                   placeholder="Price"
                 />
               </p>
               <p>
-                <label htmlFor="short">Short Description: </label>
+                <label htmlFor="price">Set Price: </label>
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
-                  value="The file will have its original line endings in your working directory"
-                  readOnly
-                  id="short"
-                  type="text"
-                  placeholder="Price"
-                />
-              </p>
-              <p>
-                <label htmlFor="price">Price: </label>
-                <input
                   id="price"
                   value="30$"
+                  readOnly
                   type="text"
-                  // style={{ border: "none", outline: "none", padding: "0" }}
-                  placeholder="Price"
+                  placeholder="30$"
                 />
               </p>
             </div>
             <div className="input_content_wrapper">
-              <p className="mb-3">
-                <label htmlFor="description">Description: </label>
+              <p className=" mb-2">
+                <label htmlFor="description">Synosis: </label>
                 <textarea
+                  // style={{ border: "none", outline: "none", padding: "0" }}
                   id="description"
                   value="The file will have its original line endings in your working directory"
                   readOnly
@@ -97,45 +91,48 @@ class AddContent extends Component {
                   placeholder="Description"
                 ></textarea>
               </p>
+              <p className="mb-5">
+                <label>Upload PDF:</label>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "20px",
+                    borderRadius: "3px",
+                    margin: "0 auto",
+                    width: "max-content",
+                    border: "1px solid #ced4da",
+                  }}
+                >
+                  <img
+                    htmlFor="bookpdf"
+                    src="https://cdn4.iconfinder.com/data/icons/file-extension-names-vol-8/512/24-512.png"
+                    width="50px"
+                    height="50px"
+                  />
+                  <label style={{ cursor: "pointer", width: "auto", margin: "0" }}>
+                    {" "}
+                    <div
+                      style={{
+                        fontFamily: "Open Sans",
+                        fontSize: "1rem",
+                        color: "gray",
+                        padding: `1rem 2rem`
+                      }}
+                    >
+                      {" "}
+                      No File selected{" "}
+                    </div>
+                    <input
+                      type="file"
+                      id="bookpdf"
+                      accept="application/pdf,application/vnd.ms-excel"
+                    />
+                  </label>
+                </div>
+              </p>
             </div>
-          </div>
-          <div className="dropdown_items_wrapper">
-            {this.state.add ? (
-              ""
-            ) : (
-              <button
-                onClick={() =>
-                  this.setState({
-                    dropdownItems: [
-                      ...this.state.dropdownItems,
-                      <input
-                        className="my_input"
-                        placeholder="Chapter Name"
-                        type="text"
-                      />,
-                    ],
-                    add: true,
-                  })
-                }
-                className="add_btn"
-              >
-                + Add Chapter
-              </button>
-            )}
-            <ol type="I">
-              {this.state.dropdownItems.map((el, i) => (
-                <li className="dropdown_item">
-                  {" "}
-                  <Dropdown
-                    add={
-                      this.state.add &&
-                      this.state.dropdownItems.length - 1 === i
-                    }
-                    title={el}
-                  />{" "}
-                </li>
-              ))}
-            </ol>
           </div>
           <div style={{ textAlign: "center", width: `100%` }}>
             <Link

@@ -77,8 +77,9 @@ class Categories extends Component {
       <div className="col-12 categories">
         <div className="container-fluid">
           <div className="col-12">
-            <h4 className="" style={{ fontWeight: '700', fontSize: '25px', margin: '40px 25px' }}> {heading}</h4>
+            <h4 className="" style={{ fontWeight: '700', fontSize: '25px', margin: '20px 20px' }}> {heading}</h4>
           </div>
+          <hr style={{margin: "0 1rem 2rem 1rem"}} />
           <div className="col-12">
             <div className="col-12">
                   {leftDom}

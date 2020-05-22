@@ -25,6 +25,7 @@ import Messages from '../components/Messages';
 import Profilebooks from '../components/profilebooks';
 import CommunityPageT from '../pages/communityPageT';
 import AddContent from "../components/addcourse/AddContent"
+import Addbookcontent from "../components/addbooks/Addbookcontent"
 export function Routes() {
     return <div>
         <Switch>
@@ -32,6 +33,7 @@ export function Routes() {
             <Route exact path='/profilesetting' component={ProfilesettingPage} />
             <Route exact path='/myebooks' component={Profilebooks} />
             <Route exact path='/' component={CommunityPage} />
+            {/* <Route exact path='/' component={Addbookcontent} /> */}
             <Route exact path='/community/:tId' component={CommunityPageT} />
             <Route exact path='/credits' component={CreditsPage} />
             <Route exact path='/watchcourses' component={WatchcoursePage} />
@@ -41,12 +43,13 @@ export function Routes() {
             <Route exact path='/groups' component={GroupsPage} />
             <Route exact path='/addcourse' component={AddcoursePage} />
             <Route exact path='/addcontent' component={AddContent} />
+            <Route exact path='/addbookcontent' component={Addbookcontent} />
             <Route exact path='/morecommunities' component={MoreCommunityPage} />
             <Route path='/inbox' component={Messages} />
             <Route path='/user/:id/topics' component={TopicPage} />
             <Route path='/courses' component={CoursePage} />
-            <Route path='/coursescategories' component={()=><CoursesCategoriesPage course={true} />} />
-            <Route path='/ebookscategories' component={()=> <CoursesCategoriesPage course={false}/>} />
+            <Route path='/coursescategories' component={() => <CoursesCategoriesPage course={true} />} />
+            <Route path='/ebookscategories' component={() => <CoursesCategoriesPage course={false} />} />
             <Route path='/coursedetails' component={CourseDetailsPage} />
             <Route path='/profile' component={() => <Profile ismyProfile={true} />} />
             <Route path='/otherprofile' component={() => <Profile ismyProfile={false} />} />
@@ -62,7 +65,7 @@ export function PublicRoutes() {
     return <div>
         <Switch>
             <Route exact path='/login' component={LoginPage} />
-            <Route path='/register' component={SignupPage} /> 
+            <Route path='/register' component={SignupPage} />
             <Route render={() => <Redirect to='/login' />} />
         </Switch>
     </div>

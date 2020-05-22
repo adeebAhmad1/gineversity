@@ -770,6 +770,8 @@ input[type="number"] {
   font-weight: 600;
   padding: 10px;
   border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: normal;
 }
 .profile_flex {
   display: flex;
@@ -782,9 +784,9 @@ input[type="number"] {
   display: inline-block;
 }
 .icon_comment {
-  width: 40px;
-  height: 40px;
-  font-size: 1.1rem;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -795,13 +797,15 @@ input[type="number"] {
 .commenter {
   margin-left: 10px;
   font-weight: bold;
+  font-size: 0.9rem;
 }
 .comment_wrapper {
   margin-left: 50px;
   max-width: 50%;
   background-color: #fff;
-  padding: 1.3rem;
-  line-height: 1.4;
+  padding: 1rem;
+  font-size: 0.8rem;
+  line-height: 1;
   border-radius: 20px;
 }
 .comments_wrapper {
@@ -817,10 +821,11 @@ input[type="number"] {
 }
 .comment_input_wrapper input {
   flex: 0 0 87%;
-  padding: 0.8rem 1.7rem;
+  padding: 0.4rem 1.7rem;
   border-radius: 100rem;
   background-color: #fff;
   outline: none;
+  font-size: 0.8rem;
   border: 2px solid transparent;
 }
 .comment_input_wrapper input:focus {
@@ -830,7 +835,7 @@ input[type="number"] {
   flex: 0 0 7%;
   background-color: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .comment_section {
   padding-bottom: 10px;
@@ -872,15 +877,23 @@ input[type="number"] {
   display: block;
   width: 100%;
 }
-.input_content_wrapper input,
+.input_content_wrapper label {
+  width: 20%;
+}
 .input_content_wrapper textarea {
-  width: 70%;
+  width: 80%;
+}
+.price_wrapper input,
+.price_wrapper textarea {
+  width: 70% !important;
   resize: none;
   padding: 10px 15px;
 }
-.input_content_wrapper label {
+.price_wrapper label {
   width: 30%;
-  vertical-align: top;
+}
+.input_content_wrapper label {
+  font-weight: 700;
 }
 .dropdown_items_wrapper {
   width: 100%;
@@ -1002,4 +1015,28 @@ input[type="number"] {
 .my_input:focus{
   border-bottom: 2px solid #ff3600;
   outline: none;
+}
+.videocard-video{
+  margin: 0 auto;
+  text-align: center;
+}
+.videocard-video video{
+  /* max-width: 950px; */
+  flex: 0 0 75%;
+  height: 65vh;
+}
+.my_courses_page .category_card:nth-child(4) .card_outer .course_details_wrapper::before,
+.my_courses_page .category_card:nth-child(4) .card_outer .course_details_wrapper::after ,
+.my_courses_page .category_card:nth-child(8) .card_outer .course_details_wrapper::before,
+.my_courses_page .category_card:nth-child(8) .card_outer .course_details_wrapper::after {
+  right: -15px;
+  left: auto;
+}
+.my_courses_page .category_card:nth-child(4) .card_outer .course_details_wrapper::before ,
+.my_courses_page .category_card:nth-child(8) .card_outer .course_details_wrapper::before {
+  transform: skewX(-45deg) !important;
+}
+.my_courses_page .category_card:nth-child(4) .card_outer .course_details_wrapper::after ,
+.my_courses_page .category_card:nth-child(8) .card_outer .course_details_wrapper::after {
+  transform: skewX(45deg) !important;
 }

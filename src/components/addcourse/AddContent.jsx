@@ -47,7 +47,7 @@ class AddContent extends Component {
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="My Title"
-                  readOnly
+                   
                   id="title"
                   type="text"
                   placeholder="Price"
@@ -58,7 +58,7 @@ class AddContent extends Component {
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="Computer"
-                  readOnly
+                   
                   id="category"
                   type="text"
                   placeholder="Price"
@@ -69,7 +69,7 @@ class AddContent extends Component {
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="The file will have its original line endings in your working directory"
-                  readOnly
+                   
                   id="short"
                   type="text"
                   placeholder="Price"
@@ -90,9 +90,10 @@ class AddContent extends Component {
               <p className="mb-3">
                 <label htmlFor="description">Description: </label>
                 <textarea
+                // style={{ border: "none", outline: "none", padding: "0" }}
                   id="description"
                   value="The file will have its original line endings in your working directory"
-                  readOnly
+                   
                   rows={5}
                   placeholder="Description"
                 ></textarea>

@@ -242,6 +242,9 @@ class index extends Component {
                       ></i>
                     </Link>
                     <hr />
+                    <Link to="/inbox" className="dropdown-item">
+                      Inbox
+                  </Link>
                     <Link to="/watchcourses" className="dropdown-item">
                       My Courses
                   </Link>
@@ -257,9 +260,7 @@ class index extends Component {
                     <Link to="/profilesetting" className="dropdown-item">
                       Settings
                   </Link>
-                    <Link to="/inbox" className="dropdown-item">
-                      Inbox
-                  </Link>
+                    
                     <button
                       className="dropdown-item"
                       onClick={(e) => this.props.logOut()}
@@ -485,6 +486,9 @@ class index extends Component {
                       ></i>
                     </Link>
                     <hr />
+                    <Link to="/inbox" className="dropdown-item">
+                      Inbox
+                  </Link>
                     <Link to="/watchcourses" className="dropdown-item">
                       My Courses
                   </Link>
@@ -499,9 +503,6 @@ class index extends Component {
                   </Link>
                     <Link to="/profilesetting" className="dropdown-item">
                       Settings
-                  </Link>
-                  <Link to="/inbox" className="dropdown-item">
-                      Inbox
                   </Link>
                     <button
                       className="dropdown-item"
@@ -605,6 +606,9 @@ class index extends Component {
                     ></i>
                   </Link>
                   <hr />
+                  <Link to="/inbox" className="dropdown-item">
+                      Inbox
+                  </Link>
                   <Link to="/watchcourses" className="dropdown-item">
                     My Courses
                 </Link>

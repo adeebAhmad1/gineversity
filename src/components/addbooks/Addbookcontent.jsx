@@ -50,7 +50,7 @@ class AddContent extends Component {
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="Title"
-                  readOnly
+                   
                   id="title"
                   type="text"
                   placeholder="title"
@@ -61,7 +61,7 @@ class AddContent extends Component {
                 <input
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   value="Computer"
-                  readOnly
+                   
                   id="price"
                   type="text"
                   placeholder="Price"
@@ -73,7 +73,7 @@ class AddContent extends Component {
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   id="price"
                   value="30$"
-                  readOnly
+                   
                   type="text"
                   placeholder="30$"
                 />
@@ -86,7 +86,7 @@ class AddContent extends Component {
                   // style={{ border: "none", outline: "none", padding: "0" }}
                   id="description"
                   value="The file will have its original line endings in your working directory"
-                  readOnly
+                   
                   rows={5}
                   placeholder="Description"
                 ></textarea>
@@ -95,7 +95,7 @@ class AddContent extends Component {
                 <label>Upload PDF:</label>
                 <div
                   style={{
-                    display: "flex",
+                    display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "20px",
@@ -116,9 +116,8 @@ class AddContent extends Component {
                     <div
                       style={{
                         fontFamily: "Open Sans",
-                        fontSize: "1rem",
+                        fontSize: "1.2rem",
                         color: "gray",
-                        padding: `1rem 2rem`
                       }}
                     >
                       {" "}
